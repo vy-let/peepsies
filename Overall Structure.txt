@@ -1,0 +1,8 @@
+Item
+- Main app view -- nav root
+    - Login
+    - Settings
+    - Other Users
+- New Text Post view -- comes up as sheet
+- New Picture Post view -- comes up as sheet
+    - drawing attributes view
