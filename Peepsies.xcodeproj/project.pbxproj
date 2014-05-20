@@ -19,6 +19,9 @@
 		9C0674DE192A78A4003E74FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0674C6192A78A4003E74FB /* UIKit.framework */; };
 		9C0674E6192A78A4003E74FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C0674E4192A78A4003E74FB /* InfoPlist.strings */; };
 		9C0674E8192A78A4003E74FB /* PeepsiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0674E7192A78A4003E74FB /* PeepsiesTests.m */; };
+		C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */; };
+		C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */; };
+		C3E1FB81192A84F800568C88 /* PPPostThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,11 @@
 		9C0674E3192A78A4003E74FB /* PeepsiesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeepsiesTests-Info.plist"; sourceTree = "<group>"; };
 		9C0674E5192A78A4003E74FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C0674E7192A78A4003E74FB /* PeepsiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeepsiesTests.m; sourceTree = "<group>"; };
+		C3E1FB7A192A7E8000568C88 /* PPMainAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMainAppViewController.h; sourceTree = "<group>"; };
+		C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMainAppViewController.m; sourceTree = "<group>"; };
+		C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPMainAppView.xib; sourceTree = "<group>"; };
+		C3E1FB7F192A84F800568C88 /* PPPostThumbnail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPostThumbnail.h; sourceTree = "<group>"; };
+		C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPostThumbnail.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +119,11 @@
 				9C0674D2192A78A4003E74FB /* PPAppDelegate.m */,
 				9C0674D4192A78A4003E74FB /* Images.xcassets */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
+				C3E1FB7A192A7E8000568C88 /* PPMainAppViewController.h */,
+				C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */,
+				C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */,
+				C3E1FB7F192A84F800568C88 /* PPPostThumbnail.h */,
+				C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */,
 			);
 			path = Peepsies;
 			sourceTree = "<group>";
@@ -221,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C0674CD192A78A4003E74FB /* InfoPlist.strings in Resources */,
+				C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */,
 				9C0674D5192A78A4003E74FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,7 +254,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */,
 				9C0674D3192A78A4003E74FB /* PPAppDelegate.m in Sources */,
+				C3E1FB81192A84F800568C88 /* PPPostThumbnail.m in Sources */,
 				9C0674CF192A78A4003E74FB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +456,7 @@
 				9C0674ED192A78A4003E74FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9C0674EE192A78A4003E74FB /* Build configuration list for PBXNativeTarget "PeepsiesTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +465,7 @@
 				9C0674F0192A78A4003E74FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

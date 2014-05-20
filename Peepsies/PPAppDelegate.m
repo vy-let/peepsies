@@ -6,14 +6,15 @@
 //  Copyright (c) 2014 Peepsies Ltd. All rights reserved.
 //
 
-#import "PPAppDelegate.h"
+#import "PPAppDelegate.h" 
+#import "PPMainAppViewController.h"
 
 @implementation PPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[PPMainAppViewController alloc] init]];
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
