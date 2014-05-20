@@ -19,6 +19,25 @@
 		9C0674DE192A78A4003E74FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0674C6192A78A4003E74FB /* UIKit.framework */; };
 		9C0674E6192A78A4003E74FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C0674E4192A78A4003E74FB /* InfoPlist.strings */; };
 		9C0674E8192A78A4003E74FB /* PeepsiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0674E7192A78A4003E74FB /* PeepsiesTests.m */; };
+		9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3B192BDD06002B061D /* DrawingViewController.m */; };
+		9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */; };
+		9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */; };
+		9C5C7F44192BDD06002B061D /* DrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F40192BDD06002B061D /* DrawView.m */; };
+		9C5C7F68192BDD33002B061D /* DLCPDoubleAxisSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F47192BDD33002B061D /* DLCPDoubleAxisSlider.m */; };
+		9C5C7F69192BDD33002B061D /* DLCPSingleAxisSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F4A192BDD33002B061D /* DLCPSingleAxisSlider.m */; };
+		9C5C7F6A192BDD33002B061D /* DLCPBackgroundLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F4C192BDD33002B061D /* DLCPBackgroundLayer.m */; };
+		9C5C7F6B192BDD33002B061D /* DLCPCheckerBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F4E192BDD33002B061D /* DLCPCheckerBoard.m */; };
+		9C5C7F6C192BDD33002B061D /* DLCPIndicatorLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F50192BDD33002B061D /* DLCPIndicatorLayer.m */; };
+		9C5C7F6D192BDD33002B061D /* UIControl+DLCP.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F52192BDD33002B061D /* UIControl+DLCP.m */; };
+		9C5C7F6E192BDD33002B061D /* DLCPColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F55192BDD33002B061D /* DLCPColorPickerController.m */; };
+		9C5C7F6F192BDD33002B061D /* DLCPGradientColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F58192BDD33002B061D /* DLCPGradientColorPickerController.m */; };
+		9C5C7F70192BDD33002B061D /* DLCPWaterfallColorPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F5B192BDD33002B061D /* DLCPWaterfallColorPickerController.m */; };
+		9C5C7F71192BDD33002B061D /* DLCPAlphaPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F5D192BDD33002B061D /* DLCPAlphaPicker.m */; };
+		9C5C7F72192BDD33002B061D /* DLCPBrightnessPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F5F192BDD33002B061D /* DLCPBrightnessPicker.m */; };
+		9C5C7F73192BDD33002B061D /* DLCPHexPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F61192BDD33002B061D /* DLCPHexPicker.m */; };
+		9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F63192BDD33002B061D /* DLCPHuePicker.m */; };
+		9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */; };
+		9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */; };
 		C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */; };
 		C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */; };
 		C3E1FB81192A84F800568C88 /* PPPostThumbnail.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */; };
@@ -51,6 +70,48 @@
 		9C0674E3192A78A4003E74FB /* PeepsiesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeepsiesTests-Info.plist"; sourceTree = "<group>"; };
 		9C0674E5192A78A4003E74FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C0674E7192A78A4003E74FB /* PeepsiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeepsiesTests.m; sourceTree = "<group>"; };
+		9C5C7F3A192BDD06002B061D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
+		9C5C7F3B192BDD06002B061D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
+		9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingAttributesViewController.h; sourceTree = "<group>"; };
+		9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingAttributesViewController.m; sourceTree = "<group>"; };
+		9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawingAttributesView.xib; sourceTree = "<group>"; };
+		9C5C7F3F192BDD06002B061D /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawView.h; sourceTree = "<group>"; };
+		9C5C7F40192BDD06002B061D /* DrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawView.m; sourceTree = "<group>"; };
+		9C5C7F45192BDD33002B061D /* DLCPDoubleAxisSlider+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLCPDoubleAxisSlider+Protected.h"; sourceTree = "<group>"; };
+		9C5C7F46192BDD33002B061D /* DLCPDoubleAxisSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPDoubleAxisSlider.h; sourceTree = "<group>"; };
+		9C5C7F47192BDD33002B061D /* DLCPDoubleAxisSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPDoubleAxisSlider.m; sourceTree = "<group>"; };
+		9C5C7F48192BDD33002B061D /* DLCPSingleAxisSlider+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLCPSingleAxisSlider+Protected.h"; sourceTree = "<group>"; };
+		9C5C7F49192BDD33002B061D /* DLCPSingleAxisSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPSingleAxisSlider.h; sourceTree = "<group>"; };
+		9C5C7F4A192BDD33002B061D /* DLCPSingleAxisSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPSingleAxisSlider.m; sourceTree = "<group>"; };
+		9C5C7F4B192BDD33002B061D /* DLCPBackgroundLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPBackgroundLayer.h; sourceTree = "<group>"; };
+		9C5C7F4C192BDD33002B061D /* DLCPBackgroundLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPBackgroundLayer.m; sourceTree = "<group>"; };
+		9C5C7F4D192BDD33002B061D /* DLCPCheckerBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPCheckerBoard.h; sourceTree = "<group>"; };
+		9C5C7F4E192BDD33002B061D /* DLCPCheckerBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPCheckerBoard.m; sourceTree = "<group>"; };
+		9C5C7F4F192BDD33002B061D /* DLCPIndicatorLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPIndicatorLayer.h; sourceTree = "<group>"; };
+		9C5C7F50192BDD33002B061D /* DLCPIndicatorLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPIndicatorLayer.m; sourceTree = "<group>"; };
+		9C5C7F51192BDD33002B061D /* UIControl+DLCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+DLCP.h"; sourceTree = "<group>"; };
+		9C5C7F52192BDD33002B061D /* UIControl+DLCP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+DLCP.m"; sourceTree = "<group>"; };
+		9C5C7F53192BDD33002B061D /* DLCPColorPickerController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLCPColorPickerController+Protected.h"; sourceTree = "<group>"; };
+		9C5C7F54192BDD33002B061D /* DLCPColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPColorPickerController.h; sourceTree = "<group>"; };
+		9C5C7F55192BDD33002B061D /* DLCPColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPColorPickerController.m; sourceTree = "<group>"; };
+		9C5C7F56192BDD33002B061D /* DLCPGradientColorPickerController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLCPGradientColorPickerController+Protected.h"; sourceTree = "<group>"; };
+		9C5C7F57192BDD33002B061D /* DLCPGradientColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPGradientColorPickerController.h; sourceTree = "<group>"; };
+		9C5C7F58192BDD33002B061D /* DLCPGradientColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPGradientColorPickerController.m; sourceTree = "<group>"; };
+		9C5C7F59192BDD33002B061D /* DLCPWaterfallColorPickerController+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DLCPWaterfallColorPickerController+Protected.h"; sourceTree = "<group>"; };
+		9C5C7F5A192BDD33002B061D /* DLCPWaterfallColorPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPWaterfallColorPickerController.h; sourceTree = "<group>"; };
+		9C5C7F5B192BDD33002B061D /* DLCPWaterfallColorPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPWaterfallColorPickerController.m; sourceTree = "<group>"; };
+		9C5C7F5C192BDD33002B061D /* DLCPAlphaPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPAlphaPicker.h; sourceTree = "<group>"; };
+		9C5C7F5D192BDD33002B061D /* DLCPAlphaPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPAlphaPicker.m; sourceTree = "<group>"; };
+		9C5C7F5E192BDD33002B061D /* DLCPBrightnessPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPBrightnessPicker.h; sourceTree = "<group>"; };
+		9C5C7F5F192BDD33002B061D /* DLCPBrightnessPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPBrightnessPicker.m; sourceTree = "<group>"; };
+		9C5C7F60192BDD33002B061D /* DLCPHexPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPHexPicker.h; sourceTree = "<group>"; };
+		9C5C7F61192BDD33002B061D /* DLCPHexPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPHexPicker.m; sourceTree = "<group>"; };
+		9C5C7F62192BDD33002B061D /* DLCPHuePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPHuePicker.h; sourceTree = "<group>"; };
+		9C5C7F63192BDD33002B061D /* DLCPHuePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPHuePicker.m; sourceTree = "<group>"; };
+		9C5C7F64192BDD33002B061D /* DLCPHueSaturationPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPHueSaturationPicker.h; sourceTree = "<group>"; };
+		9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPHueSaturationPicker.m; sourceTree = "<group>"; };
+		9C5C7F66192BDD33002B061D /* DLCPSaturationBrightnessPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPSaturationBrightnessPicker.h; sourceTree = "<group>"; };
+		9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPSaturationBrightnessPicker.m; sourceTree = "<group>"; };
 		C3E1FB7A192A7E8000568C88 /* PPMainAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMainAppViewController.h; sourceTree = "<group>"; };
 		C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMainAppViewController.m; sourceTree = "<group>"; };
 		C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPMainAppView.xib; sourceTree = "<group>"; };
@@ -115,6 +176,7 @@
 		9C0674C8192A78A4003E74FB /* Peepsies */ = {
 			isa = PBXGroup;
 			children = (
+				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
 				9C0674D1192A78A4003E74FB /* PPAppDelegate.h */,
 				9C0674D2192A78A4003E74FB /* PPAppDelegate.m */,
 				9C0674D4192A78A4003E74FB /* Images.xcassets */,
@@ -155,6 +217,95 @@
 				9C0674E4192A78A4003E74FB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9C5C7F39192BDCEA002B061D /* Drawing Sheet */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F3A192BDD06002B061D /* DrawingViewController.h */,
+				9C5C7F3B192BDD06002B061D /* DrawingViewController.m */,
+				9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */,
+				9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */,
+				9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */,
+				9C5C7F3F192BDD06002B061D /* DrawView.h */,
+				9C5C7F40192BDD06002B061D /* DrawView.m */,
+				9C5C7F77192BDD47002B061D /* DLColorPicker */,
+			);
+			name = "Drawing Sheet";
+			sourceTree = "<group>";
+		};
+		9C5C7F77192BDD47002B061D /* DLColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F78192BDD5A002B061D /* Abstract */,
+				9C5C7F79192BDD6B002B061D /* Appearance */,
+				9C5C7F7A192BDD8A002B061D /* Controllers */,
+				9C5C7F7B192BDD98002B061D /* Pickers */,
+			);
+			name = DLColorPicker;
+			sourceTree = "<group>";
+		};
+		9C5C7F78192BDD5A002B061D /* Abstract */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F45192BDD33002B061D /* DLCPDoubleAxisSlider+Protected.h */,
+				9C5C7F46192BDD33002B061D /* DLCPDoubleAxisSlider.h */,
+				9C5C7F47192BDD33002B061D /* DLCPDoubleAxisSlider.m */,
+				9C5C7F48192BDD33002B061D /* DLCPSingleAxisSlider+Protected.h */,
+				9C5C7F49192BDD33002B061D /* DLCPSingleAxisSlider.h */,
+				9C5C7F4A192BDD33002B061D /* DLCPSingleAxisSlider.m */,
+			);
+			name = Abstract;
+			sourceTree = "<group>";
+		};
+		9C5C7F79192BDD6B002B061D /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F4B192BDD33002B061D /* DLCPBackgroundLayer.h */,
+				9C5C7F4C192BDD33002B061D /* DLCPBackgroundLayer.m */,
+				9C5C7F4D192BDD33002B061D /* DLCPCheckerBoard.h */,
+				9C5C7F4E192BDD33002B061D /* DLCPCheckerBoard.m */,
+				9C5C7F4F192BDD33002B061D /* DLCPIndicatorLayer.h */,
+				9C5C7F50192BDD33002B061D /* DLCPIndicatorLayer.m */,
+				9C5C7F51192BDD33002B061D /* UIControl+DLCP.h */,
+				9C5C7F52192BDD33002B061D /* UIControl+DLCP.m */,
+			);
+			name = Appearance;
+			sourceTree = "<group>";
+		};
+		9C5C7F7A192BDD8A002B061D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F53192BDD33002B061D /* DLCPColorPickerController+Protected.h */,
+				9C5C7F54192BDD33002B061D /* DLCPColorPickerController.h */,
+				9C5C7F55192BDD33002B061D /* DLCPColorPickerController.m */,
+				9C5C7F56192BDD33002B061D /* DLCPGradientColorPickerController+Protected.h */,
+				9C5C7F57192BDD33002B061D /* DLCPGradientColorPickerController.h */,
+				9C5C7F58192BDD33002B061D /* DLCPGradientColorPickerController.m */,
+				9C5C7F59192BDD33002B061D /* DLCPWaterfallColorPickerController+Protected.h */,
+				9C5C7F5A192BDD33002B061D /* DLCPWaterfallColorPickerController.h */,
+				9C5C7F5B192BDD33002B061D /* DLCPWaterfallColorPickerController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		9C5C7F7B192BDD98002B061D /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				9C5C7F5C192BDD33002B061D /* DLCPAlphaPicker.h */,
+				9C5C7F5D192BDD33002B061D /* DLCPAlphaPicker.m */,
+				9C5C7F5E192BDD33002B061D /* DLCPBrightnessPicker.h */,
+				9C5C7F5F192BDD33002B061D /* DLCPBrightnessPicker.m */,
+				9C5C7F60192BDD33002B061D /* DLCPHexPicker.h */,
+				9C5C7F61192BDD33002B061D /* DLCPHexPicker.m */,
+				9C5C7F62192BDD33002B061D /* DLCPHuePicker.h */,
+				9C5C7F63192BDD33002B061D /* DLCPHuePicker.m */,
+				9C5C7F64192BDD33002B061D /* DLCPHueSaturationPicker.h */,
+				9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */,
+				9C5C7F66192BDD33002B061D /* DLCPSaturationBrightnessPicker.h */,
+				9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */,
+			);
+			name = Pickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */,
 				9C0674CD192A78A4003E74FB /* InfoPlist.strings in Resources */,
 				C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */,
 				9C0674D5192A78A4003E74FB /* Images.xcassets in Resources */,
@@ -254,10 +406,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5C7F6A192BDD33002B061D /* DLCPBackgroundLayer.m in Sources */,
+				9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */,
+				9C5C7F71192BDD33002B061D /* DLCPAlphaPicker.m in Sources */,
+				9C5C7F6E192BDD33002B061D /* DLCPColorPickerController.m in Sources */,
+				9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */,
 				C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */,
+				9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */,
+				9C5C7F70192BDD33002B061D /* DLCPWaterfallColorPickerController.m in Sources */,
+				9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */,
+				9C5C7F6B192BDD33002B061D /* DLCPCheckerBoard.m in Sources */,
 				9C0674D3192A78A4003E74FB /* PPAppDelegate.m in Sources */,
+				9C5C7F6D192BDD33002B061D /* UIControl+DLCP.m in Sources */,
+				9C5C7F6F192BDD33002B061D /* DLCPGradientColorPickerController.m in Sources */,
+				9C5C7F73192BDD33002B061D /* DLCPHexPicker.m in Sources */,
+				9C5C7F44192BDD06002B061D /* DrawView.m in Sources */,
 				C3E1FB81192A84F800568C88 /* PPPostThumbnail.m in Sources */,
+				9C5C7F6C192BDD33002B061D /* DLCPIndicatorLayer.m in Sources */,
 				9C0674CF192A78A4003E74FB /* main.m in Sources */,
+				9C5C7F72192BDD33002B061D /* DLCPBrightnessPicker.m in Sources */,
+				9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */,
+				9C5C7F68192BDD33002B061D /* DLCPDoubleAxisSlider.m in Sources */,
+				9C5C7F69192BDD33002B061D /* DLCPSingleAxisSlider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
