@@ -191,14 +191,11 @@
 				C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */,
 				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
-<<<<<<< HEAD
 				C365B98A192D256E00C47B99 /* PPMessage.h */,
 				C365B98B192D256E00C47B99 /* PPMessage.m */,
 				C365B98D192D27C600C47B99 /* PPPostMessage.h */,
 				C365B98E192D27C600C47B99 /* PPPostMessage.m */,
-=======
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
->>>>>>> FETCH_HEAD
 			);
 			path = Peepsies;
 			sourceTree = "<group>";
