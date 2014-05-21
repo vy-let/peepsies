@@ -12,6 +12,7 @@
 @interface PPMainAppViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *thumbnailsView;
+@property (nonatomic, strong) NSArray *photos;
 
 @end
 
@@ -26,9 +27,13 @@
     return self;
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -40,6 +45,8 @@
         NSLog(@"cell not created");
     }
     
+ //   [cell.setImage: self.photos[indexPath]]; 
+    
     return cell;
 }
 
@@ -47,7 +54,16 @@
 {
     [super viewDidLoad];
     
-    [_thumbnailsView registerClass:[PPPostThumbnail class] forCellWithReuseIdentifier:@"rootThum"]; 
+    [self.thumbnailsView registerClass:[PPPostThumbnail class] forCellWithReuseIdentifier:@"rootThum"];
+    
+    self.photos = [NSArray arrayWithObjects:
+                      [UIImage imageNamed:@"mario"],
+                      [UIImage imageNamed:@"smile"],
+                      [UIImage imageNamed:@"cupcake"],
+                      [UIImage imageNamed:@"sulley"],
+                      [UIImage imageNamed:@"tricolor"], nil ];
+    
+    
     
 }
 
