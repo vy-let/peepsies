@@ -22,7 +22,9 @@
 {
     self = [super initWithNibName:@"PPMainAppView" bundle:[NSBundle mainBundle]];
     if (self) {
-        // Custom initialization
+        [self setTitle:@"Peepsies"];
+        UIImage *gridImage = [UIImage imageNamed:@"PictureGridTemplate"];
+        [[self tabBarItem] setImage:gridImage];
     }
     return self;
 }

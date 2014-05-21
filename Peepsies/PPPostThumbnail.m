@@ -18,7 +18,6 @@
         UIImageView *pictureHolder = [[UIImageView alloc] initWithFrame:self.bounds];
         pictureHolder.contentMode  = UIViewContentModeScaleAspectFill;
         pictureHolder.clipsToBounds = YES; 
-     //   NSLog(@"%f, %f", self.bounds.size.width, self.bounds.size.height);
         [self.contentView addSubview:pictureHolder];
         self.imageView = pictureHolder;
     }

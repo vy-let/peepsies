@@ -14,7 +14,14 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[PPMainAppViewController alloc] init]];
+    
+    UITabBarController *rootController = [[UITabBarController alloc] init];
+    [rootController setViewControllers:@[
+                                         [[UINavigationController alloc] initWithRootViewController:[[PPMainAppViewController alloc] init]]
+                                         ]
+                              animated:NO];
+    self.window.rootViewController = rootController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

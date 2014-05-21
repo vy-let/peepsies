@@ -178,14 +178,13 @@
 			children = (
 				9C0674D1192A78A4003E74FB /* PPAppDelegate.h */,
 				9C0674D2192A78A4003E74FB /* PPAppDelegate.m */,
-				9C0674D4192A78A4003E74FB /* Images.xcassets */,
-				9C0674C9192A78A4003E74FB /* Supporting Files */,
 				C3E1FB7A192A7E8000568C88 /* PPMainAppViewController.h */,
 				C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */,
 				C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */,
 				C3E1FB7F192A84F800568C88 /* PPPostThumbnail.h */,
 				C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */,
 				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
+				9C0674C9192A78A4003E74FB /* Supporting Files */,
 			);
 			path = Peepsies;
 			sourceTree = "<group>";
@@ -193,6 +192,7 @@
 		9C0674C9192A78A4003E74FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C0674D4192A78A4003E74FB /* Images.xcassets */,
 				9C0674CA192A78A4003E74FB /* Peepsies-Info.plist */,
 				9C0674CB192A78A4003E74FB /* InfoPlist.strings */,
 				9C0674CE192A78A4003E74FB /* main.m */,
