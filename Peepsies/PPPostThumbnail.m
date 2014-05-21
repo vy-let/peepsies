@@ -15,8 +15,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        [self.contentView addSubview:self.imageView]; 
+        UIImageView *pictureHolder = [[UIImageView alloc] initWithFrame:self.bounds];
+        NSLog(@"%f, %f", self.bounds.size.width, self.bounds.size.height);
+        [self.contentView addSubview:pictureHolder];
+        self.imageView = pictureHolder;
     }
     return self;
 }

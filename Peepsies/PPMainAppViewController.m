@@ -38,14 +38,14 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"rootThum" forIndexPath:indexPath];
+    PPPostThumbnail *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"rootThum" forIndexPath:indexPath];
     
     if(!cell)
     {
         NSLog(@"cell not created");
     }
     
- //   [cell.setImage: self.photos[indexPath]]; 
+    [[cell imageView] setImage:self.photos[indexPath.row]];
     
     return cell;
 }
@@ -60,8 +60,8 @@
                       [UIImage imageNamed:@"mario"],
                       [UIImage imageNamed:@"smile"],
                       [UIImage imageNamed:@"cupcake"],
-                      [UIImage imageNamed:@"sulley"],
-                      [UIImage imageNamed:@"tricolor"], nil ];
+                      [UIImage imageNamed:@"tricolor"],
+                      [UIImage imageNamed:@"sulley"], nil ];
     
     
     
