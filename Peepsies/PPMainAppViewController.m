@@ -61,7 +61,14 @@
                       [UIImage imageNamed:@"smile"],
                       [UIImage imageNamed:@"cupcake"],
                       [UIImage imageNamed:@"tricolor"],
-                      [UIImage imageNamed:@"sulley"], nil ];
+                      [UIImage imageNamed:@"sulley"],
+                      [UIImage imageNamed:@"rainbow"],
+                      [UIImage imageNamed:@"spongebob"],
+                      [UIImage imageNamed:@"balloons"],
+                      [UIImage imageNamed:@"penguin"],
+                      [UIImage imageNamed:@"adium"],
+                      [UIImage imageNamed:@"timon"],
+                                                    nil ];
     
     
     
