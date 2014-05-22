@@ -38,6 +38,7 @@
 		9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F63192BDD33002B061D /* DLCPHuePicker.m */; };
 		9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */; };
 		9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */; };
+		9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178CA192DBE260016BA14 /* PPNewPostCell.m */; };
 		C365B98C192D256E00C47B99 /* PPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C365B98B192D256E00C47B99 /* PPMessage.m */; };
 		C365B98F192D27C600C47B99 /* PPPostMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C365B98E192D27C600C47B99 /* PPPostMessage.m */; };
 		C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */; };
@@ -114,6 +115,8 @@
 		9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPHueSaturationPicker.m; sourceTree = "<group>"; };
 		9C5C7F66192BDD33002B061D /* DLCPSaturationBrightnessPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLCPSaturationBrightnessPicker.h; sourceTree = "<group>"; };
 		9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPSaturationBrightnessPicker.m; sourceTree = "<group>"; };
+		9C7178C9192DBE260016BA14 /* PPNewPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNewPostCell.h; sourceTree = "<group>"; };
+		9C7178CA192DBE260016BA14 /* PPNewPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNewPostCell.m; sourceTree = "<group>"; };
 		C365B98A192D256E00C47B99 /* PPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMessage.h; sourceTree = "<group>"; };
 		C365B98B192D256E00C47B99 /* PPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMessage.m; sourceTree = "<group>"; };
 		C365B98D192D27C600C47B99 /* PPPostMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPostMessage.h; sourceTree = "<group>"; };
@@ -189,6 +192,8 @@
 				C3E1FB7C192A7E8000568C88 /* PPMainAppView.xib */,
 				C3E1FB7F192A84F800568C88 /* PPPostThumbnail.h */,
 				C3E1FB80192A84F800568C88 /* PPPostThumbnail.m */,
+				9C7178C9192DBE260016BA14 /* PPNewPostCell.h */,
+				9C7178CA192DBE260016BA14 /* PPNewPostCell.m */,
 				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
 				C365B98A192D256E00C47B99 /* PPMessage.h */,
@@ -420,6 +425,7 @@
 				9C5C7F6A192BDD33002B061D /* DLCPBackgroundLayer.m in Sources */,
 				9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */,
 				9C5C7F71192BDD33002B061D /* DLCPAlphaPicker.m in Sources */,
+				9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */,
 				9C5C7F6E192BDD33002B061D /* DLCPColorPickerController.m in Sources */,
 				9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */,
 				C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */,

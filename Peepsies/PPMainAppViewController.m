@@ -8,11 +8,12 @@
 
 #import "PPMainAppViewController.h" 
 #import "PPPostThumbnail.h"
+#import "PPNewPostCell.h"
 
 @interface PPMainAppViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *thumbnailsView;
-@property (nonatomic, strong) NSArray *photos;
+@property (nonatomic) NSArray *photos;
 
 @end
 
@@ -25,38 +26,52 @@
         [self setTitle:@"Peepsies"];
         UIImage *gridImage = [UIImage imageNamed:@"PictureGridTemplate"];
         [[self tabBarItem] setImage:gridImage];
+        
     }
     return self;
 }
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
 
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [self.photos count];
+    return [self.photos count] + 1;
 }
+
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    PPPostThumbnail *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"rootThum" forIndexPath:indexPath];
+    NSInteger thumbnailIndex = [indexPath row];
     
-    if(!cell)
-    {
-        NSLog(@"cell not created");
+    if (thumbnailIndex == 0) {
+        // Return the new-post cell, not a regular thumbnail.
+        return [collectionView dequeueReusableCellWithReuseIdentifier:@"rootNewPostThum" forIndexPath:indexPath];
     }
     
-    [[cell imageView] setImage:self.photos[indexPath.row]];
+    PPPostThumbnail *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"rootThum" forIndexPath:indexPath];
+    if(!cell)
+        NSLog(@"cell not created");
+    
+    [cell setThumbnail:self.photos[indexPath.row - 1]];  // Subtract one from the cell index to get the correct image
     
     return cell;
 }
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     [self.thumbnailsView registerClass:[PPPostThumbnail class] forCellWithReuseIdentifier:@"rootThum"];
+    [self.thumbnailsView registerClass:[PPNewPostCell class] forCellWithReuseIdentifier:@"rootNewPostThum"];
     
     self.photos = [NSArray arrayWithObjects:
                       [UIImage imageNamed:@"mario"],
@@ -68,6 +83,7 @@
                       [UIImage imageNamed:@"spongebob"],
                       [UIImage imageNamed:@"balloons"],
                       [UIImage imageNamed:@"penguin"],
+                      [UIImage imageNamed:@"smile"],
                       [UIImage imageNamed:@"adium"],
                       [UIImage imageNamed:@"timon"],
                                                     nil ];
@@ -76,10 +92,8 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
+
 
 @end

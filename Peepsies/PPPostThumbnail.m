@@ -14,12 +14,13 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
         UIImageView *pictureHolder = [[UIImageView alloc] initWithFrame:self.bounds];
         pictureHolder.contentMode  = UIViewContentModeScaleAspectFill;
         pictureHolder.clipsToBounds = YES; 
         [self.contentView addSubview:pictureHolder];
         self.imageView = pictureHolder;
+        
     }
     return self;
 }
@@ -33,5 +34,6 @@
 {
     return [self.imageView image];
 }
+
 
 @end

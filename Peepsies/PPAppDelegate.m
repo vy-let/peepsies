@@ -22,9 +22,15 @@
                               animated:NO];
     self.window.rootViewController = rootController;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userWantsToMakeAPost:) name:@"PPNewPostNote" object:nil];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -53,5 +59,21 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
+
+
+
+
+
+
+
+- (void)userWantsToMakeAPost:(NSNotification *)note {
+    NSLog(@"Peep!");
+}
+
+
+
 
 @end

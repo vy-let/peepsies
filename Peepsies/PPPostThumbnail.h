@@ -11,7 +11,7 @@
 @interface PPPostThumbnail : UICollectionViewCell
 
 @property (nonatomic, weak) UIImageView *imageView;
+@property (nonatomic) UIImage  *thumbnail;
 
-@property (nonatomic) UIImage  *thumbnail; 
 
 @end
