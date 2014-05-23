@@ -10,7 +10,7 @@
 
 @implementation PPRequestMessage
 
--(id)init
+-(id)initWithRequestedPostID:(NSUUID *)postID
 {
     self = [super initWithType:@"request" timestamp:[NSDate date]];
     
@@ -18,6 +18,8 @@
     {
         return nil;
     }
+    
+    _requestedPostID = postID;
     
     return self;
 }

@@ -12,14 +12,8 @@
 
 -(id)init
 {
-    self = [super initWithType:@"census" timestamp:[NSDate date]];
+    return [super initWithType:@"census" timestamp:[NSDate date]];
     
-    if(!self)
-    {
-        return nil;
-    }
-    
-    return self;
 }
 
 @end

@@ -10,4 +10,7 @@
 
 @interface PPRequestMessage : PPMessage
 
+- (id)initWithRequestedPostID:(NSUUID *)postID;
+@property (nonatomic, readonly) NSUUID *requestedPostID;
+
 @end
