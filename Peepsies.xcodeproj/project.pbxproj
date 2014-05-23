@@ -207,19 +207,8 @@
 				9C7178C9192DBE260016BA14 /* PPNewPostCell.h */,
 				9C7178CA192DBE260016BA14 /* PPNewPostCell.m */,
 				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
+				9C7178CC192FC6220016BA14 /* Message Model */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
-				C365B98A192D256E00C47B99 /* PPMessage.h */,
-				C365B98B192D256E00C47B99 /* PPMessage.m */,
-				C356513D192EF92D00BFC912 /* PPCensusMessage.h */,
-				C356513E192EF92D00BFC912 /* PPCensusMessage.m */,
-				C365B98D192D27C600C47B99 /* PPPostMessage.h */,
-				C365B98E192D27C600C47B99 /* PPPostMessage.m */,
-				C3565140192EF9B000BFC912 /* PPIdentityMessage.h */,
-				C3565141192EF9B000BFC912 /* PPIdentityMessage.m */,
-				C3565143192EFA4A00BFC912 /* PPRequestMessage.h */,
-				C3565144192EFA4A00BFC912 /* PPRequestMessage.m */,
-				C3565146192EFA8600BFC912 /* PPMentionMessage.h */,
-				C3565147192EFA8600BFC912 /* PPMentionMessage.m */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
 			);
 			path = Peepsies;
@@ -342,6 +331,25 @@
 				9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */,
 			);
 			name = Pickers;
+			sourceTree = "<group>";
+		};
+		9C7178CC192FC6220016BA14 /* Message Model */ = {
+			isa = PBXGroup;
+			children = (
+				C365B98A192D256E00C47B99 /* PPMessage.h */,
+				C365B98B192D256E00C47B99 /* PPMessage.m */,
+				C356513D192EF92D00BFC912 /* PPCensusMessage.h */,
+				C356513E192EF92D00BFC912 /* PPCensusMessage.m */,
+				C365B98D192D27C600C47B99 /* PPPostMessage.h */,
+				C365B98E192D27C600C47B99 /* PPPostMessage.m */,
+				C3565140192EF9B000BFC912 /* PPIdentityMessage.h */,
+				C3565141192EF9B000BFC912 /* PPIdentityMessage.m */,
+				C3565143192EFA4A00BFC912 /* PPRequestMessage.h */,
+				C3565144192EFA4A00BFC912 /* PPRequestMessage.m */,
+				C3565146192EFA8600BFC912 /* PPMentionMessage.h */,
+				C3565147192EFA8600BFC912 /* PPMentionMessage.m */,
+			);
+			name = "Message Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
