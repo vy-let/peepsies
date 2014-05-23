@@ -7,7 +7,6 @@
 //
 
 #import "PPPeers.h"
-#import <MultipeerConnectivity/MultipeerConnectivity.h>
 
 
 @interface PPPeers ()
@@ -17,6 +16,8 @@
 @property (nonatomic) NSMutableSet *sessionsWeBelongTo;
 @property (nonatomic) dispatch_queue_t eventQueue;
 @property (nonatomic) NSDictionary *posts;
+@property (nonatomic) MCNearbyServiceAdvertiser *serviceAdvertiser;
+@property (nonatomic) MCNearbyServiceBrowser *serviceBrowser;
 
 @end
 
@@ -46,11 +47,52 @@ static PPPeers *_sharedSingleton = nil;
     
     _posts = [NSMutableDictionary dictionaryWithCapacity:30];
     
+    _serviceAdvertiser = [[MCNearbyServiceAdvertiser alloc] initWithPeer:_ourID discoveryInfo:@{} serviceType:@"pp-peepsies"];
+    _serviceBrowser = [[MCNearbyServiceBrowser alloc] initWithPeer:_ourID serviceType:@"pp-peepsies"];
+    
+    [_serviceAdvertiser startAdvertisingPeer];
+    
+    dispatch_async(_eventQueue, ^{
+        [self fillOurSession];
+    });
     
     return self;
 }
 
+-(void)fillOurSession
+{
+    
+}
 
+#pragma mark - advertiser delegate protocol
 
+-(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
+{
+    
+}
+
+-(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didNotStartAdvertisingPeer:(NSError *)error
+{
+    
+}
+
+#pragma mark - browser delegate protocol
+
+-(void)browser:(MCNearbyServiceBrowser *)browser didNotStartBrowsingForPeers:(NSError *)error
+{
+    
+}
+
+-(void)browser:(MCNearbyServiceBrowser *)browser foundPeer:(MCPeerID *)peerID withDiscoveryInfo:(NSDictionary *)info
+{
+    
+}
+
+-(void)browser:(MCNearbyServiceBrowser *)browser lostPeer:(MCPeerID *)peerID
+{
+    dispatch_async(_eventQueue, ^{
+        [self fillOurSession];
+    });
+}
 
 @end
