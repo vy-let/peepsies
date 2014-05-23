@@ -39,6 +39,10 @@
 		9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F65192BDD33002B061D /* DLCPHueSaturationPicker.m */; };
 		9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */; };
 		9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178CA192DBE260016BA14 /* PPNewPostCell.m */; };
+		C356513F192EF92D00BFC912 /* PPCensusMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C356513E192EF92D00BFC912 /* PPCensusMessage.m */; };
+		C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565141192EF9B000BFC912 /* PPIdentityMessage.m */; };
+		C3565145192EFA4A00BFC912 /* PPRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565144192EFA4A00BFC912 /* PPRequestMessage.m */; };
+		C3565148192EFA8600BFC912 /* PPMentionMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565147192EFA8600BFC912 /* PPMentionMessage.m */; };
 		C365B98C192D256E00C47B99 /* PPMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C365B98B192D256E00C47B99 /* PPMessage.m */; };
 		C365B98F192D27C600C47B99 /* PPPostMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C365B98E192D27C600C47B99 /* PPPostMessage.m */; };
 		C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3E1FB7B192A7E8000568C88 /* PPMainAppViewController.m */; };
@@ -117,6 +121,14 @@
 		9C5C7F67192BDD33002B061D /* DLCPSaturationBrightnessPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLCPSaturationBrightnessPicker.m; sourceTree = "<group>"; };
 		9C7178C9192DBE260016BA14 /* PPNewPostCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPNewPostCell.h; sourceTree = "<group>"; };
 		9C7178CA192DBE260016BA14 /* PPNewPostCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPNewPostCell.m; sourceTree = "<group>"; };
+		C356513D192EF92D00BFC912 /* PPCensusMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCensusMessage.h; sourceTree = "<group>"; };
+		C356513E192EF92D00BFC912 /* PPCensusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCensusMessage.m; sourceTree = "<group>"; };
+		C3565140192EF9B000BFC912 /* PPIdentityMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPIdentityMessage.h; sourceTree = "<group>"; };
+		C3565141192EF9B000BFC912 /* PPIdentityMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPIdentityMessage.m; sourceTree = "<group>"; };
+		C3565143192EFA4A00BFC912 /* PPRequestMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRequestMessage.h; sourceTree = "<group>"; };
+		C3565144192EFA4A00BFC912 /* PPRequestMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRequestMessage.m; sourceTree = "<group>"; };
+		C3565146192EFA8600BFC912 /* PPMentionMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMentionMessage.h; sourceTree = "<group>"; };
+		C3565147192EFA8600BFC912 /* PPMentionMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMentionMessage.m; sourceTree = "<group>"; };
 		C365B98A192D256E00C47B99 /* PPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPMessage.h; sourceTree = "<group>"; };
 		C365B98B192D256E00C47B99 /* PPMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPMessage.m; sourceTree = "<group>"; };
 		C365B98D192D27C600C47B99 /* PPPostMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPostMessage.h; sourceTree = "<group>"; };
@@ -198,8 +210,16 @@
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
 				C365B98A192D256E00C47B99 /* PPMessage.h */,
 				C365B98B192D256E00C47B99 /* PPMessage.m */,
+				C356513D192EF92D00BFC912 /* PPCensusMessage.h */,
+				C356513E192EF92D00BFC912 /* PPCensusMessage.m */,
 				C365B98D192D27C600C47B99 /* PPPostMessage.h */,
 				C365B98E192D27C600C47B99 /* PPPostMessage.m */,
+				C3565140192EF9B000BFC912 /* PPIdentityMessage.h */,
+				C3565141192EF9B000BFC912 /* PPIdentityMessage.m */,
+				C3565143192EFA4A00BFC912 /* PPRequestMessage.h */,
+				C3565144192EFA4A00BFC912 /* PPRequestMessage.m */,
+				C3565146192EFA8600BFC912 /* PPMentionMessage.h */,
+				C3565147192EFA8600BFC912 /* PPMentionMessage.m */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
 			);
 			path = Peepsies;
@@ -426,12 +446,14 @@
 				9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */,
 				9C5C7F71192BDD33002B061D /* DLCPAlphaPicker.m in Sources */,
 				9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */,
+				C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */,
 				9C5C7F6E192BDD33002B061D /* DLCPColorPickerController.m in Sources */,
 				9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */,
 				C3E1FB7D192A7E8000568C88 /* PPMainAppViewController.m in Sources */,
 				9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */,
 				9C5C7F70192BDD33002B061D /* DLCPWaterfallColorPickerController.m in Sources */,
 				9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */,
+				C356513F192EF92D00BFC912 /* PPCensusMessage.m in Sources */,
 				9C5C7F6B192BDD33002B061D /* DLCPCheckerBoard.m in Sources */,
 				9C0674D3192A78A4003E74FB /* PPAppDelegate.m in Sources */,
 				9C5C7F6D192BDD33002B061D /* UIControl+DLCP.m in Sources */,
@@ -439,10 +461,12 @@
 				C365B98F192D27C600C47B99 /* PPPostMessage.m in Sources */,
 				9C5C7F73192BDD33002B061D /* DLCPHexPicker.m in Sources */,
 				C365B98C192D256E00C47B99 /* PPMessage.m in Sources */,
+				C3565145192EFA4A00BFC912 /* PPRequestMessage.m in Sources */,
 				9C5C7F44192BDD06002B061D /* DrawView.m in Sources */,
 				C3E1FB81192A84F800568C88 /* PPPostThumbnail.m in Sources */,
 				9C5C7F6C192BDD33002B061D /* DLCPIndicatorLayer.m in Sources */,
 				9C0674CF192A78A4003E74FB /* main.m in Sources */,
+				C3565148192EFA8600BFC912 /* PPMentionMessage.m in Sources */,
 				9C5C7F72192BDD33002B061D /* DLCPBrightnessPicker.m in Sources */,
 				9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */,
 				9C5C7F68192BDD33002B061D /* DLCPDoubleAxisSlider.m in Sources */,
