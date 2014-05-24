@@ -92,7 +92,7 @@
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [actionSheet destructiveButtonIndex]) {
-        [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{ }];
+        [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];
         
     }
 }
@@ -112,6 +112,10 @@
          [_drawingView setCanEdit:YES];
     }];
     
+    // Do this when we have time to figure out how to make it work:
+//    [UIView transitionWithView:[[self navigationController] view] duration:0.75 options:UIViewAnimationOptionTransitionFlipFromRight animations:^{
+//        [[self navigationController] pushViewController:attrsVC animated:YES];
+//    } completion:nil];
     [[self navigationController] pushViewController:attrsVC animated:YES];
 }
 

@@ -8,6 +8,7 @@
 
 #import "PPAppDelegate.h" 
 #import "PPMainAppViewController.h"
+#import "DrawingViewController.h"
 
 @implementation PPAppDelegate
 
@@ -70,7 +71,15 @@
 
 
 - (void)userWantsToMakeAPost:(NSNotification *)note {
-    NSLog(@"Peep!");
+    [[[self window] rootViewController] presentViewController:[ [UINavigationController alloc]
+                                                                initWithRootViewController: [[DrawingViewController alloc] init] ]
+                                                     animated:YES
+                                                   completion:nil];
+}
+
+
+- (void)userWantsToMakeATextPost:(NSNotification *)note {
+    NSLog(@"Would make a text post.");
 }
 
 

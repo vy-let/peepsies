@@ -41,6 +41,10 @@
 		9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178CA192DBE260016BA14 /* PPNewPostCell.m */; };
 		9C7178CF192FC6580016BA14 /* PPPeers.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178CE192FC6580016BA14 /* PPPeers.m */; };
 		9C7178D1192FC6D90016BA14 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7178D0192FC6D90016BA14 /* MultipeerConnectivity.framework */; };
+		9C7178D6193054670016BA14 /* FatSquiggleTemplate.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C7178D2193054670016BA14 /* FatSquiggleTemplate.tif */; };
+		9C7178D7193054670016BA14 /* FatSquiggleTemplate@2x.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C7178D3193054670016BA14 /* FatSquiggleTemplate@2x.tif */; };
+		9C7178D8193054670016BA14 /* ThinSquiggleTemplate.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C7178D4193054670016BA14 /* ThinSquiggleTemplate.tif */; };
+		9C7178D9193054670016BA14 /* ThinSquiggleTemplate@2x.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C7178D5193054670016BA14 /* ThinSquiggleTemplate@2x.tif */; };
 		C356513F192EF92D00BFC912 /* PPCensusMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C356513E192EF92D00BFC912 /* PPCensusMessage.m */; };
 		C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565141192EF9B000BFC912 /* PPIdentityMessage.m */; };
 		C3565145192EFA4A00BFC912 /* PPRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565144192EFA4A00BFC912 /* PPRequestMessage.m */; };
@@ -126,6 +130,10 @@
 		9C7178CD192FC6580016BA14 /* PPPeers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPeers.h; sourceTree = "<group>"; };
 		9C7178CE192FC6580016BA14 /* PPPeers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPeers.m; sourceTree = "<group>"; };
 		9C7178D0192FC6D90016BA14 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		9C7178D2193054670016BA14 /* FatSquiggleTemplate.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = FatSquiggleTemplate.tif; sourceTree = "<group>"; };
+		9C7178D3193054670016BA14 /* FatSquiggleTemplate@2x.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "FatSquiggleTemplate@2x.tif"; sourceTree = "<group>"; };
+		9C7178D4193054670016BA14 /* ThinSquiggleTemplate.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = ThinSquiggleTemplate.tif; sourceTree = "<group>"; };
+		9C7178D5193054670016BA14 /* ThinSquiggleTemplate@2x.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = "ThinSquiggleTemplate@2x.tif"; sourceTree = "<group>"; };
 		C356513D192EF92D00BFC912 /* PPCensusMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCensusMessage.h; sourceTree = "<group>"; };
 		C356513E192EF92D00BFC912 /* PPCensusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCensusMessage.m; sourceTree = "<group>"; };
 		C3565140192EF9B000BFC912 /* PPIdentityMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPIdentityMessage.h; sourceTree = "<group>"; };
@@ -226,6 +234,10 @@
 		9C0674C9192A78A4003E74FB /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C7178D2193054670016BA14 /* FatSquiggleTemplate.tif */,
+				9C7178D3193054670016BA14 /* FatSquiggleTemplate@2x.tif */,
+				9C7178D4193054670016BA14 /* ThinSquiggleTemplate.tif */,
+				9C7178D5193054670016BA14 /* ThinSquiggleTemplate@2x.tif */,
 				9C0674D4192A78A4003E74FB /* Images.xcassets */,
 				9C0674CA192A78A4003E74FB /* Peepsies-Info.plist */,
 				9C0674CB192A78A4003E74FB /* InfoPlist.strings */,
@@ -437,9 +449,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C7178D6193054670016BA14 /* FatSquiggleTemplate.tif in Resources */,
 				9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */,
+				9C7178D8193054670016BA14 /* ThinSquiggleTemplate.tif in Resources */,
 				9C0674CD192A78A4003E74FB /* InfoPlist.strings in Resources */,
+				9C7178D7193054670016BA14 /* FatSquiggleTemplate@2x.tif in Resources */,
 				C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */,
+				9C7178D9193054670016BA14 /* ThinSquiggleTemplate@2x.tif in Resources */,
 				9C0674D5192A78A4003E74FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

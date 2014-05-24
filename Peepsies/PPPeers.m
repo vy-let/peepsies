@@ -26,10 +26,11 @@
 
 static PPPeers *_sharedSingleton = nil;
 + (void)initialize {
-    _sharedSingleton = [[PPPeers alloc] init];
+    //_sharedSingleton = [[PPPeers alloc] init];
 }
 
 - (PPPeers *)peers {
+    // TODO neither create the singleton nor return it until the username has been established.
     return _sharedSingleton;
 }
 

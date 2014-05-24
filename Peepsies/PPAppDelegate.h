@@ -10,6 +10,9 @@
 
 @interface PPAppDelegate : UIResponder <UIApplicationDelegate>
 
+- (void)userWantsToMakeAPost:(NSNotification *)note;
+- (void)userWantsToMakeATextPost:(NSNotification *)note;
+
 @property (strong, nonatomic) UIWindow *window;
 
 @end
