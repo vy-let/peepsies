@@ -9,6 +9,7 @@
 #import "DrawingAttributesViewController.h"
 #import "DLCPSaturationBrightnessPicker.h"
 #import "DLCPHuePicker.h"
+#import "NSUserDefaults+Colorific.h"
 
 @interface DrawingAttributesViewController () {
     PPDrawingSettingsDoneBlock _doneBlock;
@@ -20,19 +21,16 @@
 
 @implementation DrawingAttributesViewController
 
-- (id)initWithStartingLineColor:(UIColor *)lineColor
-                backgroundColor:(UIColor *)bgColor
-                     lineWeight:(CGFloat)weight
-                backgroundImage:(UIImage *)bgImage
-                     whenDoneDo:(PPDrawingSettingsDoneBlock)doneBlock {
+- (id)initAndWhenDoneDo:(PPDrawingSettingsDoneBlock)doneBlock {
     
     if (! (self = [super initWithNibName:@"DrawingAttributesView" bundle:[NSBundle mainBundle]]) )
         return nil;
     
-    _lineColor = lineColor;
-    _backgroundColor = bgColor;
-    _weight = weight;
-    _backgroundImage = bgImage;
+    NSUserDefaults *suds = [NSUserDefaults standardUserDefaults];
+    _lineColor = [suds pp_colorForKey:@"PPDrawingLastLineColor"];
+    _backgroundColor = [suds pp_colorForKey:@"PPDrawingLastBackgroundColor"];
+    _weight = [suds doubleForKey:@"PPDrawingLastLineWeight"];
+    _backgroundImage = nil;
     _doneBlock = [doneBlock copy];
     
     return self;
@@ -47,43 +45,15 @@
     [self updateSaturationBrightnessPicker:lineSaturationBrightnessPicker       andHuePicker:lineHuePicker       withColor:_lineColor];
     [self updateSaturationBrightnessPicker:backgroundSaturationBrightnessPicker andHuePicker:backgroundHuePicker withColor:_backgroundColor];
     
-    [self swapLineAndBackgroundViews];
+    [self swapLineAndBackgroundViews:nil];
     [lineWeightPicker setValue:_weight];
-    
-    [lineBackgroundChooser                addTarget:self
-                                             action:@selector(swapLineAndBackgroundViews)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [lineSaturationBrightnessPicker       addTarget:self
-                                             action:@selector(userDidSelectNewLineSaturationAndBrightness)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [lineHuePicker                        addTarget:self
-                                             action:@selector(userDidSelectNewLineHue)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [backgroundSaturationBrightnessPicker addTarget:self
-                                             action:@selector(userDidSelectNewBackgroundSaturationAndBrightness)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [backgroundHuePicker                  addTarget:self
-                                             action:@selector(userDidSelectNewBackgroundHue)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [lineWeightPicker                     addTarget:self
-                                             action:@selector(userDidSelectNewLineWeight)
-                                   forControlEvents:UIControlEventValueChanged];
-    
-    [backgroundImageChooserButton         addTarget:self
-                                             action:@selector(userWantsANewBackgroundPicture)
-                                   forControlEvents:UIControlEventTouchUpInside];
     
     
 }
 
 
 
-- (void)swapLineAndBackgroundViews {
+- (IBAction)swapLineAndBackgroundViews:(id)sender {
     NSArray *currentSubviews = [swapViewHolder subviews];
     
     if ([lineBackgroundChooser selectedSegmentIndex] == 0  &&  ![currentSubviews containsObject:linePickerView]) {
@@ -104,7 +74,8 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    _doneBlock(_lineColor, _backgroundColor, _weight, _backgroundImage);
+    if (_doneBlock)
+        _doneBlock();
 }
 
 
@@ -127,49 +98,54 @@
 }
 
 
-- (void)userDidSelectNewLineSaturationAndBrightness {
+- (IBAction)userDidSelectNewLineSaturationAndBrightness:(id)sender {
     _lineColor = [[UIColor alloc] initWithHue:[lineHuePicker hue]
                                    saturation:[lineSaturationBrightnessPicker saturation]
                                    brightness:[lineSaturationBrightnessPicker brightness]
                                         alpha:1];
     [self updateSaturationBrightnessPicker:nil andHuePicker:lineHuePicker withColor:_lineColor];
+    [[NSUserDefaults standardUserDefaults] pp_setColor:_lineColor forKey:@"PPDrawingLastLineColor"];
 }
 
 
-- (void)userDidSelectNewLineHue {
+- (IBAction)userDidSelectNewLineHue:(id)sender {
     _lineColor = [[UIColor alloc] initWithHue:[lineHuePicker hue]
                                    saturation:[lineSaturationBrightnessPicker saturation]
                                    brightness:[lineSaturationBrightnessPicker brightness]
                                         alpha:1];
     [self updateSaturationBrightnessPicker:lineSaturationBrightnessPicker andHuePicker:nil withColor:_lineColor];
+    [[NSUserDefaults standardUserDefaults] pp_setColor:_lineColor forKey:@"PPDrawingLastLineColor"];
 }
 
 
-- (void)userDidSelectNewBackgroundSaturationAndBrightness {
+- (IBAction)userDidSelectNewBackgroundSaturationAndBrightness:(id)sender {
     _backgroundColor = [[UIColor alloc] initWithHue:[backgroundHuePicker hue]
                                  saturation:[backgroundSaturationBrightnessPicker saturation]
                                  brightness:[backgroundSaturationBrightnessPicker brightness]
                                       alpha:1];
     [self updateSaturationBrightnessPicker:nil andHuePicker:backgroundHuePicker withColor:_backgroundColor];
+    [[NSUserDefaults standardUserDefaults] pp_setColor:_backgroundColor forKey:@"PPDrawingLastBackgroundColor"];
 }
 
 
-- (void)userDidSelectNewBackgroundHue {
+- (IBAction)userDidSelectNewBackgroundHue:(id)sender {
     _backgroundColor = [[UIColor alloc] initWithHue:[backgroundHuePicker hue]
                                  saturation:[backgroundSaturationBrightnessPicker saturation]
                                  brightness:[backgroundSaturationBrightnessPicker brightness]
                                       alpha:1];
     [self updateSaturationBrightnessPicker:backgroundSaturationBrightnessPicker andHuePicker:nil withColor:_backgroundColor];
+    [[NSUserDefaults standardUserDefaults] pp_setColor:_backgroundColor forKey:@"PPDrawingLastBackgroundColor"];
 }
 
 
-- (void)userDidSelectNewLineWeight {
+- (IBAction)userDidSelectNewLineWeight:(id)sender {
     _weight = [lineWeightPicker value];
+    [[NSUserDefaults standardUserDefaults] setDouble:_weight forKey:@"PPDrawingLastLineWeight"];
 }
 
 
 
-- (void)userWantsANewBackgroundPicture {
+- (IBAction)userWantsANewBackgroundPicture:(id)sender {
     NSLog(@"Selectafoto");
 }
 

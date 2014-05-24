@@ -12,6 +12,23 @@
 
 @implementation PPAppDelegate
 
+
++ (void)initialize {
+    [[NSUserDefaults standardUserDefaults]
+     registerDefaults:@{
+                        @"PPDrawingLastBackgroundColor": @[ @1.0, @1.0, @1.0, @1.0 ],  // White
+                        @"PPDrawingLastLineColor": @[ @0.0, @0.0, @0.0, @1.0 ],  // Black
+                        @"PPDrawingLastLineWeight": @5.0
+                        }];
+}
+
+
+
+
+
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];

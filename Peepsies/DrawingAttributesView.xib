@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -31,6 +32,9 @@
                         <segment title="Line"/>
                         <segment title="Background"/>
                     </segments>
+                    <connections>
+                        <action selector="swapLineAndBackgroundViews:" destination="-1" eventType="valueChanged" id="tu7-X9-wHv"/>
+                    </connections>
                 </segmentedControl>
                 <view contentMode="scaleToFill" id="4wi-vC-D33">
                     <rect key="frame" x="0.0" y="164" width="320" height="404"/>
@@ -50,15 +54,24 @@
                     <rect key="frame" x="20" y="20" width="280" height="119"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="userDidSelectNewLineSaturationAndBrightness:" destination="-1" eventType="valueChanged" id="yI0-hK-iPn"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="qDO-my-fks" customClass="DLCPHuePicker">
                     <rect key="frame" x="20" y="147" width="280" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="userDidSelectNewLineHue:" destination="-1" eventType="valueChanged" id="Fq8-Bk-DF7"/>
+                    </connections>
                 </view>
                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="1" maxValue="50" minimumValueImage="ThinSquiggleTemplate.tif" maximumValueImage="FatSquiggleTemplate.tif" id="TdH-eh-hLc">
                     <rect key="frame" x="18" y="250" width="284" height="31"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <connections>
+                        <action selector="userDidSelectNewLineWeight:" destination="-1" eventType="valueChanged" id="UU9-bW-rrN"/>
+                    </connections>
                 </slider>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -71,11 +84,17 @@
                     <rect key="frame" x="20" y="20" width="280" height="119"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="userDidSelectNewBackgroundSaturationAndBrightness:" destination="-1" eventType="valueChanged" id="1PC-kb-FiJ"/>
+                    </connections>
                 </view>
                 <view contentMode="scaleToFill" id="doh-Mu-7jX" customClass="DLCPHuePicker">
                     <rect key="frame" x="20" y="147" width="280" height="50"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <action selector="userDidSelectNewBackgroundHue:" destination="-1" eventType="valueChanged" id="Jgk-FB-kc8"/>
+                    </connections>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ctS-oO-BQN">
                     <rect key="frame" x="107" y="252" width="107" height="30"/>
@@ -83,6 +102,9 @@
                     <state key="normal" title="Use a Picture…">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="userWantsANewBackgroundPicture:" destination="-1" eventType="touchUpInside" id="9vm-WD-5Rb"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

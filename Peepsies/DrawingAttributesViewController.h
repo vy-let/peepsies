@@ -10,7 +10,7 @@
 @class DLCPSaturationBrightnessPicker;
 @class DLCPHuePicker;
 
-typedef void (^PPDrawingSettingsDoneBlock)(UIColor *lineColor, UIColor *bgColor, CGFloat lineWeight, UIImage *bgImage);
+typedef void (^PPDrawingSettingsDoneBlock)(void);
 
 
 @interface DrawingAttributesViewController : UIViewController {
@@ -28,11 +28,7 @@ typedef void (^PPDrawingSettingsDoneBlock)(UIColor *lineColor, UIColor *bgColor,
     __weak IBOutlet UIButton *backgroundImageChooserButton;
 }
 
-- (id)initWithStartingLineColor:(UIColor *)lineColor
-                backgroundColor:(UIColor *)bgColor
-                     lineWeight:(CGFloat)weight
-                backgroundImage:(UIImage *)bgImage
-                     whenDoneDo:(PPDrawingSettingsDoneBlock)doneBlock;
+- (id)initAndWhenDoneDo:(PPDrawingSettingsDoneBlock)doneBlock;
 
 @property (nonatomic, readonly) UIColor *lineColor;
 @property (nonatomic, readonly) UIColor *backgroundColor;

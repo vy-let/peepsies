@@ -9,12 +9,14 @@
 #import "DrawingViewController.h"
 #import "DrawView.h"
 #import "DrawingAttributesViewController.h"
+#import "NSUserDefaults+Colorific.h"
+#import "MAKVONotificationCenter.h"
 
-@interface DrawingViewController () {
-    __weak DrawView *_drawingView;
-    __weak UIBarButtonItem *_cancelDrawingButton;
-    UIImage *_currentBgImage;
-}
+@interface DrawingViewController ()
+
+@property (nonatomic, weak) DrawView *drawingView;
+@property (nonatomic, weak) UIBarButtonItem *cancelDrawingButton;
+@property (nonatomic) UIImage *currentBgImage;
 
 @end
 
@@ -25,7 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setTitle:@"Drawing"];
-    [[self view] setBackgroundColor:[UIColor whiteColor]];
+    
+    NSUserDefaults *suds = [NSUserDefaults standardUserDefaults];
+    [[self view] setBackgroundColor:[suds pp_colorForKey:@"PPDrawingLastBackgroundColor"]];
     
     CGRect navBarFrame = [[[self navigationController] navigationBar] frame];
     CGRect myBounds = [[self view] bounds];
@@ -34,10 +38,12 @@
     drawingFrame.size.height -= (navBarFrame.size.height + navBarFrame.origin.y);
     
     DrawView *drawingView = [[DrawView alloc] initWithFrame:drawingFrame];
-    [drawingView setStrokeWidth:3];
-    [drawingView setStrokeColor:[UIColor blackColor]];
+    [drawingView setStrokeWidth:[suds doubleForKey:@"PPDrawingLastLineWeight"]];
+    [drawingView setStrokeColor:[suds pp_colorForKey:@"PPDrawingLastLineColor"]];
     [drawingView setOpaque:NO];
     [drawingView setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    
+    [self listeningForDrawingAttributeChanges];
     
     [[self view] addSubview:drawingView];
     [drawingView setCanEdit:YES];
@@ -46,6 +52,8 @@
     
     _drawingView = drawingView;
 }
+
+
 
 - (void)setUpTitleBar {
     UIBarButtonItem *postButton = [[UIBarButtonItem alloc] initWithTitle:@"Post"
@@ -71,6 +79,42 @@
 }
 
 
+- (void)listeningForDrawingAttributeChanges {
+    // The KVO Center retains, as it must, the observation blocks below.
+    // If they were to refer directly to self, or to self's iVars, the drawing view would never,
+    // ever get dealloc'ed. It's not the usual retain cycle issue, but the resolution is the same weak-self dance.
+    // See: https://www.mikeash.com/pyblog/friday-qa-2012-03-02-key-value-observing-done-right-take-2.html#comment-9d1c74918104a9892b19603ab9ea01ee
+    __weak DrawingViewController *weakSelf = self;
+    
+    // Totally doesn't need to be weak, because it lasts the lifetime of the app anyhow.
+    // But the compiler whines otherwise.
+    __weak NSUserDefaults *suds = [NSUserDefaults standardUserDefaults];
+    
+    [suds addObservationKeyPath:@"PPDrawingLastLineWeight" options:NSKeyValueObservingOptionNew block:^(MAKVONotification *notification) {
+        [[weakSelf drawingView] setStrokeWidth:[[notification newValue] doubleValue]];
+    }];
+    
+    [suds addObservationKeyPath:@"PPDrawingLastLineColor" options:NSKeyValueObservingOptionNew block:^(MAKVONotification *notification) {
+        [[weakSelf drawingView] setStrokeColor:[suds pp_colorForKey:@"PPDrawingLastLineColor"]];  // We could use the new value from the notification, but it doesn't give us this helper method.
+    }];
+    
+    [suds addObservationKeyPath:@"PPDrawingLastBackgroundColor" options:NSKeyValueObservingOptionNew block:^(MAKVONotification *notification) {
+        [[weakSelf view] setBackgroundColor:[suds pp_colorForKey:@"PPDrawingLastBackgroundColor"]];
+    }];
+    
+}
+
+
+
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+//    NSLog(@"Key path “%@”, of object “%@”, with change info “%@”.", keyPath, object, change);
+//}
+//
+//- (void)dealloc {
+//    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"PPDrawingLastLineWeight"];
+//}
+//
+//
 
 
 - (void)postPicture {
@@ -102,14 +146,8 @@
 
 - (void)editDrawingAttributes {
     DrawingAttributesViewController *attrsVC =
-    [[DrawingAttributesViewController alloc] initWithStartingLineColor:[_drawingView strokeColor] backgroundColor:[[self view] backgroundColor] lineWeight:[_drawingView strokeWidth] backgroundImage:_currentBgImage whenDoneDo:
-     ^(UIColor *newLineColor, UIColor *newBgColor, CGFloat newLineWeight, UIImage *newBgImage) {
-        
-         [_drawingView setStrokeColor:newLineColor];
-         [[self view] setBackgroundColor:newBgColor];
-         [_drawingView setStrokeWidth:newLineWeight];
-         _currentBgImage = newBgImage;  // TODO set this up properly, of course.
-         [_drawingView setCanEdit:YES];
+    [[DrawingAttributesViewController alloc] initAndWhenDoneDo:^{
+        // do we need this?
     }];
     
     // Do this when we have time to figure out how to make it work:
