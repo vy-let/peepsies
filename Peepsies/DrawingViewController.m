@@ -7,14 +7,16 @@
 //
 
 #import "DrawingViewController.h"
-#import "DrawView.h"
+#import "PPDrawView.h"
+#import "PPDrawingRecordView.h"
 #import "DrawingAttributesViewController.h"
 #import "NSUserDefaults+Colorific.h"
 #import "MAKVONotificationCenter.h"
 
 @interface DrawingViewController ()
 
-@property (nonatomic, weak) DrawView *drawingView;
+@property (nonatomic, weak) PPDrawView *drawingView;
+@property (nonatomic, weak) PPDrawingRecordView *drawingRecordView;
 @property (nonatomic, weak) UIBarButtonItem *cancelDrawingButton;
 @property (nonatomic) UIImage *currentBgImage;
 
@@ -37,20 +39,29 @@
     drawingFrame.origin.y = navBarFrame.size.height + navBarFrame.origin.y;
     drawingFrame.size.height -= (navBarFrame.size.height + navBarFrame.origin.y);
     
-    DrawView *drawingView = [[DrawView alloc] initWithFrame:drawingFrame];
-    [drawingView setStrokeWidth:[suds doubleForKey:@"PPDrawingLastLineWeight"]];
-    [drawingView setStrokeColor:[suds pp_colorForKey:@"PPDrawingLastLineColor"]];
-    [drawingView setOpaque:NO];
-    [drawingView setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    PPDrawingRecordView *recordView = [[PPDrawingRecordView alloc] initWithFrame:drawingFrame];
+    [[self view] addSubview:recordView];
+    _drawingRecordView = recordView;
     
+    PPDrawView *drawingView = [[PPDrawView alloc] initWithFrame:drawingFrame];
+    [drawingView setTouchEndedTarget:self action:@selector(finishedStroke:)];
+    [[self view] addSubview:drawingView];
+    _drawingView = drawingView;
+    [self setUpDrawingView];
     [self listeningForDrawingAttributeChanges];
     
-    [[self view] addSubview:drawingView];
-    [drawingView setCanEdit:YES];
-    
     [self setUpTitleBar];
-    
-    _drawingView = drawingView;
+}
+
+
+
+- (void)setUpDrawingView {
+    NSUserDefaults *suds = [NSUserDefaults standardUserDefaults];
+    [_drawingView setStrokeColor:[suds pp_colorForKey:@"PPDrawingLastLineColor"]];
+    [_drawingView setStrokeWidth:[suds doubleForKey:@"PPDrawingLastLineWeight"]];
+    [_drawingView setOpaque:NO];
+    [_drawingView setBackgroundColor:[UIColor colorWithWhite:1 alpha:0]];
+    [_drawingView setCanEdit:YES];
 }
 
 
@@ -77,6 +88,7 @@
     [[self navigationItem] setLeftBarButtonItem:cancelButton];
     _cancelDrawingButton = cancelButton;
 }
+
 
 
 - (void)listeningForDrawingAttributeChanges {
@@ -106,15 +118,22 @@
 
 
 
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-//    NSLog(@"Key path “%@”, of object “%@”, with change info “%@”.", keyPath, object, change);
-//}
-//
-//- (void)dealloc {
-//    [[NSUserDefaults standardUserDefaults] removeObserver:self forKeyPath:@"PPDrawingLastLineWeight"];
-//}
-//
-//
+
+
+- (IBAction)finishedStroke:(id)sender {
+    UIBezierPath *lastStroke = [_drawingView bezierPathRepresentation];
+    if (!lastStroke) return;
+    
+    [_drawingRecordView pushStroke:lastStroke
+                            weight:[_drawingView strokeWidth]
+                             color:[_drawingView strokeColor]];
+    [_drawingView clearDrawing];
+    [self setUpDrawingView];
+    
+}
+
+
+
 
 
 - (void)postPicture {

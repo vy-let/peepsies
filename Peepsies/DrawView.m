@@ -75,6 +75,7 @@
     bezierPath = [UIBezierPath new];
     bezierPath.CGPath = path;
     bezierPath.lineCapStyle = kCGLineCapRound;
+    bezierPath.lineJoinStyle = kCGLineJoinRound;  // Added by the peepsterators.
     bezierPath.lineWidth = _strokeWidth;
     bezierPath.miterLimit = 0.0f;
     // If iPad apply the scale first so the paths bounds is in its final state.
@@ -202,6 +203,7 @@
     if (_canEdit){
         bezierPath = [[UIBezierPath alloc] init];
         [bezierPath setLineCapStyle:kCGLineCapRound];
+        [bezierPath setLineJoinStyle:kCGLineJoinRound];  // Added by the peepsterators.
         [bezierPath setLineWidth:_strokeWidth];
         [bezierPath setMiterLimit:0];
         

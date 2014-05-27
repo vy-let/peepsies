@@ -19,6 +19,9 @@
 		9C0674DE192A78A4003E74FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C0674C6192A78A4003E74FB /* UIKit.framework */; };
 		9C0674E6192A78A4003E74FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9C0674E4192A78A4003E74FB /* InfoPlist.strings */; };
 		9C0674E8192A78A4003E74FB /* PeepsiesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C0674E7192A78A4003E74FB /* PeepsiesTests.m */; };
+		9C4CC4B01934016500D27B7E /* PPDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4AF1934016500D27B7E /* PPDrawView.m */; };
+		9C4CC4B31934084200D27B7E /* PPDrawingRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */; };
+		9C4CC4B6193408BB00D27B7E /* PPDrawingStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */; };
 		9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3B192BDD06002B061D /* DrawingViewController.m */; };
 		9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */; };
 		9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */; };
@@ -85,6 +88,12 @@
 		9C0674E3192A78A4003E74FB /* PeepsiesTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeepsiesTests-Info.plist"; sourceTree = "<group>"; };
 		9C0674E5192A78A4003E74FB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9C0674E7192A78A4003E74FB /* PeepsiesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeepsiesTests.m; sourceTree = "<group>"; };
+		9C4CC4AE1934016500D27B7E /* PPDrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDrawView.h; sourceTree = "<group>"; };
+		9C4CC4AF1934016500D27B7E /* PPDrawView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawView.m; sourceTree = "<group>"; };
+		9C4CC4B11934084200D27B7E /* PPDrawingRecordView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDrawingRecordView.h; sourceTree = "<group>"; };
+		9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawingRecordView.m; sourceTree = "<group>"; };
+		9C4CC4B4193408BB00D27B7E /* PPDrawingStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDrawingStroke.h; sourceTree = "<group>"; };
+		9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawingStroke.m; sourceTree = "<group>"; };
 		9C5C7F3A192BDD06002B061D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
 		9C5C7F3B192BDD06002B061D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingAttributesViewController.h; sourceTree = "<group>"; };
@@ -279,11 +288,17 @@
 			children = (
 				9C5C7F3A192BDD06002B061D /* DrawingViewController.h */,
 				9C5C7F3B192BDD06002B061D /* DrawingViewController.m */,
+				9C4CC4B11934084200D27B7E /* PPDrawingRecordView.h */,
+				9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */,
+				9C4CC4B4193408BB00D27B7E /* PPDrawingStroke.h */,
+				9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */,
 				9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */,
 				9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */,
 				9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */,
 				9C5C7F3F192BDD06002B061D /* DrawView.h */,
 				9C5C7F40192BDD06002B061D /* DrawView.m */,
+				9C4CC4AE1934016500D27B7E /* PPDrawView.h */,
+				9C4CC4AF1934016500D27B7E /* PPDrawView.m */,
 				9C5C7F77192BDD47002B061D /* DLColorPicker */,
 			);
 			name = "Drawing Sheet";
@@ -499,6 +514,7 @@
 				9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */,
 				9C7178DC1930657A0016BA14 /* NSUserDefaults+Colorific.m in Sources */,
 				C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */,
+				9C4CC4B01934016500D27B7E /* PPDrawView.m in Sources */,
 				9C5C7F6E192BDD33002B061D /* DLCPColorPickerController.m in Sources */,
 				9C5C7F76192BDD33002B061D /* DLCPSaturationBrightnessPicker.m in Sources */,
 				9C7178CF192FC6580016BA14 /* PPPeers.m in Sources */,
@@ -508,6 +524,7 @@
 				9C5C7F75192BDD33002B061D /* DLCPHueSaturationPicker.m in Sources */,
 				C356513F192EF92D00BFC912 /* PPCensusMessage.m in Sources */,
 				9C5C7F6B192BDD33002B061D /* DLCPCheckerBoard.m in Sources */,
+				9C4CC4B31934084200D27B7E /* PPDrawingRecordView.m in Sources */,
 				9C0674D3192A78A4003E74FB /* PPAppDelegate.m in Sources */,
 				9C5C7F6D192BDD33002B061D /* UIControl+DLCP.m in Sources */,
 				9C5C7F6F192BDD33002B061D /* DLCPGradientColorPickerController.m in Sources */,
@@ -523,6 +540,7 @@
 				C3565148192EFA8600BFC912 /* PPMentionMessage.m in Sources */,
 				9C5C7F72192BDD33002B061D /* DLCPBrightnessPicker.m in Sources */,
 				9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */,
+				9C4CC4B6193408BB00D27B7E /* PPDrawingStroke.m in Sources */,
 				9C5C7F68192BDD33002B061D /* DLCPDoubleAxisSlider.m in Sources */,
 				9C5C7F69192BDD33002B061D /* DLCPSingleAxisSlider.m in Sources */,
 			);
