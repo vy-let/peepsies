@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+@class PPDrawingStroke;
 
 @interface PPDrawingRecordView : UIView
+
+- (void)pushStroke:(PPDrawingStroke *)stroke;
+- (void)pushStroke:(UIBezierPath *)stroke weight:(CGFloat)weight color:(UIColor *)color;
+//- (void)pushStroke:(UIBezierPath *)stroke color:(UIColor *)color;
+
+- (PPDrawingStroke *)peekStroke;
+- (PPDrawingStroke *)popStroke;
+
+- (UIImage *)imageWithBackgroundColor:(UIColor *)bgColor;
+
 
 @end

@@ -138,7 +138,10 @@
 
 - (void)postPicture {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{
-        NSLog(@"Would post drawing now.");
+        
+        UIImage *newDrawing = [_drawingRecordView imageWithBackgroundColor:[[self view] backgroundColor]];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"PPShowNewPost" object:self userInfo:@{@"raw image": newDrawing}];
+        
     }];
 }
 

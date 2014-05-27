@@ -13,7 +13,7 @@
 @interface PPMainAppViewController ()
 
 @property (nonatomic, weak) IBOutlet UICollectionView *thumbnailsView;
-@property (nonatomic) NSArray *photos;
+@property (nonatomic) NSMutableArray *photos;
 
 @end
 
@@ -27,8 +27,14 @@
         UIImage *gridImage = [UIImage imageNamed:@"PictureGridTemplate"];
         [[self tabBarItem] setImage:gridImage];
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNewPost:) name:@"PPShowNewPost" object:nil];
+        
     }
     return self;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -65,6 +71,18 @@
 }
 
 
+- (void)receiveNewPost:(NSNotification *)note {
+    UIImage *newPic = [[note userInfo] objectForKey:@"raw image"];
+    [self addPhoto:newPic];
+}
+
+
+- (void)addPhoto:(UIImage *)photoToDisplay {
+    [_photos insertObject:photoToDisplay atIndex:0];
+    [_thumbnailsView reloadData];
+}
+
+
 
 - (void)viewDidLoad
 {
@@ -73,7 +91,7 @@
     [self.thumbnailsView registerClass:[PPPostThumbnail class] forCellWithReuseIdentifier:@"rootThum"];
     [self.thumbnailsView registerClass:[PPNewPostCell class] forCellWithReuseIdentifier:@"rootNewPostThum"];
     
-    self.photos = [NSArray arrayWithObjects:
+    self.photos = [NSMutableArray arrayWithObjects:
                       [UIImage imageNamed:@"mario"],
                       [UIImage imageNamed:@"smile"],
                       [UIImage imageNamed:@"cupcake"],

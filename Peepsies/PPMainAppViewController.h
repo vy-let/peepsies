@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPMainAppViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource> 
+@interface PPMainAppViewController : UIViewController <UICollectionViewDelegate, UICollectionViewDataSource>
+
+- (void)addPhoto:(UIImage *)photoToDisplay;
 
 @end

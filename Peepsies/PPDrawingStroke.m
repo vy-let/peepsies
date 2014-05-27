@@ -10,4 +10,25 @@
 
 @implementation PPDrawingStroke
 
+- (id)initWithStroke:(UIBezierPath *)stroke weight:(CGFloat)weight color:(UIColor *)color {
+    if (!(self = [super init]))
+        return nil;
+    
+    _stroke = [stroke copy];  // The only possibly-mutable member.
+    _weight = weight;
+    _color  = color;
+    
+    return self;
+}
+
+//- (id)initWithStroke:(UIBezierPath *)stroke color:(UIColor *)color {
+//    if (!(self = [super init]))
+//        return nil;
+//    
+//    _stroke = [stroke copy];  // The only possibly-mutable member.
+//    _color  = color;
+//    
+//    return self;
+//}
+
 @end

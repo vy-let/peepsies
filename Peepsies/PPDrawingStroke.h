@@ -10,4 +10,11 @@
 
 @interface PPDrawingStroke : NSObject
 
+@property (nonatomic, readonly) UIBezierPath *stroke;
+@property (nonatomic, readonly) CGFloat weight;
+@property (nonatomic, readonly) UIColor *color;
+
+- (id)initWithStroke:(UIBezierPath *)stroke weight:(CGFloat)weight color:(UIColor *)color;
+//- (id)initWithStroke:(UIBezierPath *)stroke color:(UIColor *)color;
+
 @end

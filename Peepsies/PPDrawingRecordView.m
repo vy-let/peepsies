@@ -7,6 +7,15 @@
 //
 
 #import "PPDrawingRecordView.h"
+#import "PPDrawingStroke.h"
+
+@interface PPDrawingRecordView ()
+
+@property (nonatomic) NSMutableArray *strokeStack;
+
+@end
+
+
 
 @implementation PPDrawingRecordView
 
@@ -14,18 +23,79 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _strokeStack = [NSMutableArray arrayWithCapacity:50];
+        [self setOpaque:NO];
+        
     }
     return self;
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
+
+- (void)pushStroke:(PPDrawingStroke *)stroke {
+    [_strokeStack addObject:stroke];
+    [self setNeedsDisplay];
 }
-*/
+
+
+- (void)pushStroke:(UIBezierPath *)stroke weight:(CGFloat)weight color:(UIColor *)color {
+    [self pushStroke:[[PPDrawingStroke alloc] initWithStroke:stroke
+                                                      weight:weight
+                                                       color:color]];
+}
+
+
+- (PPDrawingStroke *)peekStroke {
+    return [_strokeStack lastObject];
+}
+
+- (PPDrawingStroke *)popStroke {
+    PPDrawingStroke *poppedStroke = [_strokeStack lastObject];
+    if (poppedStroke) [_strokeStack removeLastObject];
+    
+    return poppedStroke;
+}
+
+//- (void)pushStroke:(UIBezierPath *)stroke color:(UIColor *)color {
+//    [self pushStroke:[[PPDrawingStroke alloc] initWithStroke:stroke
+//                                                       color:color]];
+//}
+
+
+- (void)drawRect:(CGRect)rect {
+    
+    for (PPDrawingStroke *drawingStroke in _strokeStack) {
+        UIBezierPath *stroke = [drawingStroke stroke];
+        
+        [[drawingStroke color] setStroke];
+        
+        [stroke setLineWidth:[drawingStroke weight]];
+        [stroke setLineCapStyle:kCGLineCapRound];
+        [stroke setLineJoinStyle:kCGLineJoinRound];
+        [stroke setMiterLimit:10];
+        [stroke strokeWithBlendMode:kCGBlendModeNormal alpha:1];
+    }
+    
+}
+
+
+
+- (UIImage *)imageWithBackgroundColor:(UIColor *)bgColor {
+    UIGraphicsBeginImageContext([self bounds].size);
+    CGContextRef drawingContext = UIGraphicsGetCurrentContext();
+    
+    if (bgColor) {
+        CGContextSetFillColorWithColor(drawingContext, [bgColor CGColor]);
+        CGContextFillRect(drawingContext, [self bounds]);
+    }
+    
+    [[self layer] renderInContext:drawingContext];
+    UIImage *renderedImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return renderedImage;
+}
+
+
 
 @end
