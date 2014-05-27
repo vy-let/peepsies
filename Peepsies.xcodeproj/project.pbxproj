@@ -22,6 +22,7 @@
 		9C4CC4B01934016500D27B7E /* PPDrawView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4AF1934016500D27B7E /* PPDrawView.m */; };
 		9C4CC4B31934084200D27B7E /* PPDrawingRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */; };
 		9C4CC4B6193408BB00D27B7E /* PPDrawingStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */; };
+		9C4CC4B8193451CF00D27B7E /* SDWebImage in Resources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B7193451CF00D27B7E /* SDWebImage */; };
 		9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3B192BDD06002B061D /* DrawingViewController.m */; };
 		9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */; };
 		9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */; };
@@ -94,6 +95,7 @@
 		9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawingRecordView.m; sourceTree = "<group>"; };
 		9C4CC4B4193408BB00D27B7E /* PPDrawingStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDrawingStroke.h; sourceTree = "<group>"; };
 		9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawingStroke.m; sourceTree = "<group>"; };
+		9C4CC4B7193451CF00D27B7E /* SDWebImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SDWebImage; sourceTree = "<group>"; };
 		9C5C7F3A192BDD06002B061D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
 		9C5C7F3B192BDD06002B061D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingAttributesViewController.h; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				9C7178D3193054670016BA14 /* FatSquiggleTemplate@2x.tif */,
 				9C7178D4193054670016BA14 /* ThinSquiggleTemplate.tif */,
 				9C7178D5193054670016BA14 /* ThinSquiggleTemplate@2x.tif */,
+				9C4CC4B7193451CF00D27B7E /* SDWebImage */,
 				9C0674D4192A78A4003E74FB /* Images.xcassets */,
 				9C0674CA192A78A4003E74FB /* Peepsies-Info.plist */,
 				9C0674CB192A78A4003E74FB /* InfoPlist.strings */,
@@ -488,6 +491,7 @@
 				9C0674CD192A78A4003E74FB /* InfoPlist.strings in Resources */,
 				9C7178D7193054670016BA14 /* FatSquiggleTemplate@2x.tif in Resources */,
 				C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */,
+				9C4CC4B8193451CF00D27B7E /* SDWebImage in Resources */,
 				9C7178D9193054670016BA14 /* ThinSquiggleTemplate@2x.tif in Resources */,
 				9C0674D5192A78A4003E74FB /* Images.xcassets in Resources */,
 			);
