@@ -16,4 +16,16 @@
     
 }
 
+/*
+ 
+ Doesn't have anything to override...
+ 
+-(NSMutableDictionary *)dictionaryDataRepresentation
+{
+    NSMutableDictionary *dict = [super dictionaryDataRepresentation];
+
+    return dict;
+}
+*/
+ 
 @end

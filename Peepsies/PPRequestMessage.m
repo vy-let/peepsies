@@ -24,4 +24,11 @@
     return self;
 }
 
+-(NSMutableDictionary *)dictionaryDataRepresentation
+{
+    NSMutableDictionary *dict = [super dictionaryDataRepresentation];
+    [dict setObject:self.requestedPostID forKey:@"requestedPostID"];
+    return dict;
+}
+
 @end

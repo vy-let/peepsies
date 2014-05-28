@@ -9,12 +9,13 @@
 #import "PPMessage.h"
 #import "PPPicturePostMessage.h"
 #import "PPMentionMessage.h"
-
+#import "PPCensusMessage.h"
+#import "PPIdentityMessage.h"
+#import "PPRequestMessage.h"
 
 @interface PPMessage ()
 
 @end
-
 
 @implementation PPMessage
 
@@ -92,15 +93,20 @@
     }
     else if ([type isEqualToString:@"census"])
     {
-        
+        mesg = [[PPCensusMessage alloc] init];
     }
     else if([type isEqualToString:@"identity"])
     {
+        NSString *senderName = [dict objectForKey:@"sender-name"];
+        NSUUID *senderuuid = [[NSUUID alloc] initWithUUIDString:[dict objectForKey:@"sender"]];
         
+        mesg = [[PPIdentityMessage alloc] initWithSender:senderuuid senderName:senderName];
     }
     else if([type isEqualToString:@"request"])
     {
-        
+        NSUUID *requesteduuid = [[NSUUID alloc] initWithUUIDString:[dict objectForKey:@"requestedPostID"]];
+
+        mesg = [[PPRequestMessage alloc] initWithRequestedPostID:requesteduuid];
     }
     
     mesg.uuid = uuid;
