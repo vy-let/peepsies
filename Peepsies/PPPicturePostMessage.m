@@ -7,7 +7,7 @@
 //
 
 #import "PPPicturePostMessage.h"
-#import "SDWebImage/SDImageCache.h"
+#import <SDWebImage/SDImageCache.h>
 
 @implementation PPPicturePostMessage
 
