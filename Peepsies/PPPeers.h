@@ -12,4 +12,6 @@
 
 @interface PPPeers : NSObject <MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate>
 
++ (void)initSingleton;
+
 @end

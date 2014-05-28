@@ -10,7 +10,7 @@
 
 @implementation PPPostMessage
 
--(id)initWithBodytype:(NSString *)bodyType body:(NSData *)data sender:(NSUUID *)sender senderName:(NSString *)name
+-(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name
 {
     self = [super initWithType:@"post" timestamp:[NSDate date]]; 
     
@@ -19,12 +19,12 @@
         return nil;
     }
     
-    _bodytype = bodyType;
-    _body = data;
     _sender = sender;
     _senderName = name;
     
     return self;
 }
+
+@dynamic bodytype;
 
 @end

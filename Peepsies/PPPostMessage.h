@@ -10,9 +10,8 @@
 
 @interface PPPostMessage : PPMessage
 
--(id)initWithBodytype:(NSString *)bodyType body:(NSData *)data sender:(NSUUID *)sender senderName:(NSString *)name;
+-(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name;
 @property (nonatomic, readonly) NSString *bodytype;
-@property (nonatomic, readonly) NSData *body;
 @property (nonatomic, readonly) NSUUID *sender;
 @property (nonatomic, readonly) NSString *senderName;
 

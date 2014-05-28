@@ -9,6 +9,8 @@
 #import "PPAppDelegate.h" 
 #import "PPMainAppViewController.h"
 #import "DrawingViewController.h"
+#import "PPPeers.h"
+#import "PPUsernameViewController.h"
 
 @implementation PPAppDelegate
 
@@ -44,6 +46,11 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performLoginIfNecessary];
+    });
+    
     return YES;
 }
 
@@ -97,6 +104,25 @@
 
 - (void)userWantsToMakeATextPost:(NSNotification *)note {
     NSLog(@"Would make a text post.");
+}
+
+
+
+
+
+- (void)performLoginIfNecessary {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"PPUsername"]) {
+        [PPPeers initSingleton];
+        
+    } else {
+        [[[self window] rootViewController] presentViewController:[[PPUsernameViewController alloc] init]
+                                                         animated:YES
+                                                       completion:nil];
+        
+    }
+    
+    
+    
 }
 
 

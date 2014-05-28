@@ -23,6 +23,9 @@
 		9C4CC4B31934084200D27B7E /* PPDrawingRecordView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B21934084200D27B7E /* PPDrawingRecordView.m */; };
 		9C4CC4B6193408BB00D27B7E /* PPDrawingStroke.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */; };
 		9C4CC4B8193451CF00D27B7E /* SDWebImage in Resources */ = {isa = PBXBuildFile; fileRef = 9C4CC4B7193451CF00D27B7E /* SDWebImage */; };
+		9C4CC4BC193452B300D27B7E /* PPUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BA193452B300D27B7E /* PPUsernameViewController.m */; };
+		9C4CC4BD193452B300D27B7E /* PPUsernameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BB193452B300D27B7E /* PPUsernameView.xib */; };
+		9C4CC4C01935A3BC00D27B7E /* PPPicturePostMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BF1935A3BC00D27B7E /* PPPicturePostMessage.m */; };
 		9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3B192BDD06002B061D /* DrawingViewController.m */; };
 		9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */; };
 		9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */; };
@@ -96,6 +99,11 @@
 		9C4CC4B4193408BB00D27B7E /* PPDrawingStroke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPDrawingStroke.h; sourceTree = "<group>"; };
 		9C4CC4B5193408BB00D27B7E /* PPDrawingStroke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPDrawingStroke.m; sourceTree = "<group>"; };
 		9C4CC4B7193451CF00D27B7E /* SDWebImage */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SDWebImage; sourceTree = "<group>"; };
+		9C4CC4B9193452B300D27B7E /* PPUsernameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPUsernameViewController.h; sourceTree = "<group>"; };
+		9C4CC4BA193452B300D27B7E /* PPUsernameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPUsernameViewController.m; sourceTree = "<group>"; };
+		9C4CC4BB193452B300D27B7E /* PPUsernameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUsernameView.xib; sourceTree = "<group>"; };
+		9C4CC4BE1935A3BC00D27B7E /* PPPicturePostMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPicturePostMessage.h; sourceTree = "<group>"; };
+		9C4CC4BF1935A3BC00D27B7E /* PPPicturePostMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPicturePostMessage.m; sourceTree = "<group>"; };
 		9C5C7F3A192BDD06002B061D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
 		9C5C7F3B192BDD06002B061D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingAttributesViewController.h; sourceTree = "<group>"; };
@@ -242,6 +250,9 @@
 				9C7178CE192FC6580016BA14 /* PPPeers.m */,
 				9C7178DA1930657A0016BA14 /* NSUserDefaults+Colorific.h */,
 				9C7178DB1930657A0016BA14 /* NSUserDefaults+Colorific.m */,
+				9C4CC4B9193452B300D27B7E /* PPUsernameViewController.h */,
+				9C4CC4BA193452B300D27B7E /* PPUsernameViewController.m */,
+				9C4CC4BB193452B300D27B7E /* PPUsernameView.xib */,
 				9C5C7F39192BDCEA002B061D /* Drawing Sheet */,
 				9C7178CC192FC6220016BA14 /* Message Model */,
 				9C0674C9192A78A4003E74FB /* Supporting Files */,
@@ -390,6 +401,8 @@
 				C356513E192EF92D00BFC912 /* PPCensusMessage.m */,
 				C365B98D192D27C600C47B99 /* PPPostMessage.h */,
 				C365B98E192D27C600C47B99 /* PPPostMessage.m */,
+				9C4CC4BE1935A3BC00D27B7E /* PPPicturePostMessage.h */,
+				9C4CC4BF1935A3BC00D27B7E /* PPPicturePostMessage.m */,
 				C3565140192EF9B000BFC912 /* PPIdentityMessage.h */,
 				C3565141192EF9B000BFC912 /* PPIdentityMessage.m */,
 				C3565143192EFA4A00BFC912 /* PPRequestMessage.h */,
@@ -493,6 +506,7 @@
 				C3E1FB7E192A7E8000568C88 /* PPMainAppView.xib in Resources */,
 				9C4CC4B8193451CF00D27B7E /* SDWebImage in Resources */,
 				9C7178D9193054670016BA14 /* ThinSquiggleTemplate@2x.tif in Resources */,
+				9C4CC4BD193452B300D27B7E /* PPUsernameView.xib in Resources */,
 				9C0674D5192A78A4003E74FB /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,7 +546,9 @@
 				9C0674D3192A78A4003E74FB /* PPAppDelegate.m in Sources */,
 				9C5C7F6D192BDD33002B061D /* UIControl+DLCP.m in Sources */,
 				9C5C7F6F192BDD33002B061D /* DLCPGradientColorPickerController.m in Sources */,
+				9C4CC4BC193452B300D27B7E /* PPUsernameViewController.m in Sources */,
 				C365B98F192D27C600C47B99 /* PPPostMessage.m in Sources */,
+				9C4CC4C01935A3BC00D27B7E /* PPPicturePostMessage.m in Sources */,
 				9C5C7F73192BDD33002B061D /* DLCPHexPicker.m in Sources */,
 				C365B98C192D256E00C47B99 /* PPMessage.m in Sources */,
 				C3565145192EFA4A00BFC912 /* PPRequestMessage.m in Sources */,

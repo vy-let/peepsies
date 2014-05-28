@@ -25,8 +25,9 @@
 @implementation PPPeers
 
 static PPPeers *_sharedSingleton = nil;
-+ (void)initialize {
-    //_sharedSingleton = [[PPPeers alloc] init];
+
++ (void)initSingleton {
+    _sharedSingleton = [[PPPeers alloc] init];
 }
 
 - (PPPeers *)peers {
@@ -39,7 +40,7 @@ static PPPeers *_sharedSingleton = nil;
     if (!(self = [super init]))
         return nil;
     
-    NSString *displayName = [[NSUserDefaults standardUserDefaults] objectForKey:@"PPUserDisplayName"];
+    NSString *displayName = [[NSUserDefaults standardUserDefaults] objectForKey:@"PPUsername"];
     
     _ourID = [[MCPeerID alloc] initWithDisplayName:displayName];
     _ourPublishedSession = [[MCSession alloc] initWithPeer:_ourID];
