@@ -25,6 +25,14 @@
     return self;
 }
 
+-(NSMutableDictionary *)dictionaryDataRepresentation
+{
+    NSMutableDictionary *dict = [super dictionaryDataRepresentation];
+    [dict setObject:self.sender forKey:@"sender"];
+    [dict setObject:self.senderName forKey:@"sender-name"];
+    return dict;
+}
+
 @dynamic bodytype;
 
 @end

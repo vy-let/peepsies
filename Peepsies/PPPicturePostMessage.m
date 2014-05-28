@@ -32,4 +32,13 @@
     return @"jpeg";
 }
 
+-(NSMutableDictionary *)dictionaryDataRepresentation
+{
+    NSMutableDictionary *dict = [super dictionaryDataRepresentation];
+    [dict setObject:self.bodytype forKey:@"body-type"];
+    [dict setObject:UIImageJPEGRepresentation(self.image, 0.5) forKey:@"body"];
+    
+    return dict;
+}
+
 @end

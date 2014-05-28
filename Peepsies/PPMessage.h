@@ -12,10 +12,11 @@
 
 -(id)initWithType:(NSString *)messageType timestamp :(NSDate *)messageTimestamp;
 @property (nonatomic, readonly) NSString *type;
-@property (nonatomic, readonly) NSDate *timestamp;
-@property (nonatomic, readonly) NSUUID *uuid;
+@property (nonatomic) NSDate *timestamp;
+@property (nonatomic) NSUUID *uuid;
 
 +(PPMessage *)messageWithData:(NSData *)data;
--(NSData *)dataRepresentation; 
+-(NSData *)dataRepresentation;
+-(NSMutableDictionary *)dictionaryDataRepresentation;
 
 @end
