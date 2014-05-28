@@ -25,4 +25,18 @@
     return self;
 }
 
+-(NSData *)dataRepresentation
+{
+    
+    
+    return nil;
+}
+
++(PPMessage *)messageWithData:(NSData *)data
+{
+    
+    
+    return nil;
+}
+
 @end
