@@ -26,6 +26,7 @@
 		9C4CC4BC193452B300D27B7E /* PPUsernameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BA193452B300D27B7E /* PPUsernameViewController.m */; };
 		9C4CC4BD193452B300D27B7E /* PPUsernameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BB193452B300D27B7E /* PPUsernameView.xib */; };
 		9C4CC4C01935A3BC00D27B7E /* PPPicturePostMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4BF1935A3BC00D27B7E /* PPPicturePostMessage.m */; };
+		9C4CC4C31936EC9B00D27B7E /* NSArray+Iterable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C4CC4C21936EC9B00D27B7E /* NSArray+Iterable.m */; };
 		9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3B192BDD06002B061D /* DrawingViewController.m */; };
 		9C5C7F42192BDD06002B061D /* DrawingAttributesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3D192BDD06002B061D /* DrawingAttributesViewController.m */; };
 		9C5C7F43192BDD06002B061D /* DrawingAttributesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C5C7F3E192BDD06002B061D /* DrawingAttributesView.xib */; };
@@ -105,6 +106,8 @@
 		9C4CC4BB193452B300D27B7E /* PPUsernameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PPUsernameView.xib; sourceTree = "<group>"; };
 		9C4CC4BE1935A3BC00D27B7E /* PPPicturePostMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPicturePostMessage.h; sourceTree = "<group>"; };
 		9C4CC4BF1935A3BC00D27B7E /* PPPicturePostMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPicturePostMessage.m; sourceTree = "<group>"; };
+		9C4CC4C11936EC9B00D27B7E /* NSArray+Iterable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Iterable.h"; sourceTree = "<group>"; };
+		9C4CC4C21936EC9B00D27B7E /* NSArray+Iterable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Iterable.m"; sourceTree = "<group>"; };
 		9C5C7F3A192BDD06002B061D /* DrawingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingViewController.h; sourceTree = "<group>"; };
 		9C5C7F3B192BDD06002B061D /* DrawingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawingViewController.m; sourceTree = "<group>"; };
 		9C5C7F3C192BDD06002B061D /* DrawingAttributesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawingAttributesViewController.h; sourceTree = "<group>"; };
@@ -278,6 +281,8 @@
 				9C0674CB192A78A4003E74FB /* InfoPlist.strings */,
 				9C0674CE192A78A4003E74FB /* main.m */,
 				9C0674D0192A78A4003E74FB /* Peepsies-Prefix.pch */,
+				9C4CC4C11936EC9B00D27B7E /* NSArray+Iterable.h */,
+				9C4CC4C21936EC9B00D27B7E /* NSArray+Iterable.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -567,6 +572,7 @@
 				9C5C7F41192BDD06002B061D /* DrawingViewController.m in Sources */,
 				9C5C7F71192BDD33002B061D /* DLCPAlphaPicker.m in Sources */,
 				9C7178CB192DBE260016BA14 /* PPNewPostCell.m in Sources */,
+				9C4CC4C31936EC9B00D27B7E /* NSArray+Iterable.m in Sources */,
 				9C7178DC1930657A0016BA14 /* NSUserDefaults+Colorific.m in Sources */,
 				C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */,
 				9C4CC4B01934016500D27B7E /* PPDrawView.m in Sources */,

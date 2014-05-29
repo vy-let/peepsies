@@ -10,10 +10,10 @@
 
 @interface PPMessage : NSObject
 
--(id)initWithType:(NSString *)messageType timestamp :(NSDate *)messageTimestamp;
+-(id)initWithType:(NSString *)messageType timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
 @property (nonatomic, readonly) NSString *type;
-@property (nonatomic) NSDate *timestamp;
-@property (nonatomic) NSUUID *uuid;
+@property (nonatomic, readonly) NSDate *timestamp;
+@property (nonatomic, readonly) NSUUID *uuid;
 
 +(PPMessage *)messageWithData:(NSData *)data;
 -(NSData *)dataRepresentation;

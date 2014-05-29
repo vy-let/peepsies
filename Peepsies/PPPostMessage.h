@@ -10,7 +10,7 @@
 
 @interface PPPostMessage : PPMessage
 
--(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name;
+-(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
 @property (nonatomic, readonly) NSString *bodytype;
 @property (nonatomic, readonly) NSUUID *sender;
 @property (nonatomic, readonly) NSString *senderName;

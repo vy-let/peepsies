@@ -12,6 +12,7 @@
 #import "PPCensusMessage.h"
 #import "PPIdentityMessage.h"
 #import "PPRequestMessage.h"
+#import "NSArray+Iterable.h"
 
 @interface PPMessage ()
 
@@ -19,7 +20,7 @@
 
 @implementation PPMessage
 
--(id)initWithType:(NSString *)messageType timestamp:(NSDate *)messageTimestamp
+-(id)initWithType:(NSString *)messageType timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid
 {
     self = [super init];
     
@@ -28,8 +29,8 @@
     }
     
     _type = [messageType copy];
-    _timestamp = messageTimestamp;
-    _uuid = [NSUUID UUID]; 
+    _timestamp = messageTimestamp ? messageTimestamp : [NSDate date];
+    _uuid = uuid ? uuid : [NSUUID UUID];
     
     return self;
 }
@@ -52,7 +53,7 @@
 
 +(PPMessage *)messageWithData:(NSData *)data
 {
-    NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:NSPropertyListBinaryFormat_v1_0 error:nil];
+    NSDictionary *dict = [NSPropertyListSerialization propertyListWithData:data options:NSPropertyListImmutable format:NULL error:nil];
     
     if (![dict respondsToSelector:@selector(objectForKey:)])
         return nil;
@@ -82,14 +83,11 @@
     else if ([type isEqualToString:@"mention"])
     {
         NSArray *uuids = [dict objectForKey:@"posts"];
-        NSMutableArray *muuids = [NSMutableArray arrayWithCapacity:[uuids count]];
+        NSArray *mmuuids = [uuids map:^(NSString *suuid) {
+            return [[NSUUID alloc] initWithUUIDString:suuid];
+        }];
         
-        for(NSString *suuid in uuids)
-        {
-            [muuids addObject:[[NSUUID alloc] initWithUUIDString:suuid]];
-        }
-        
-        mesg = [[PPMentionMessage alloc] initWithPostIDs:muuids];
+        mesg = [[PPMentionMessage alloc] initWithPostIDs:mmuuids timestamp:date uuid:uuid];
     }
     else if ([type isEqualToString:@"census"])
     {
@@ -100,17 +98,15 @@
         NSString *senderName = [dict objectForKey:@"sender-name"];
         NSUUID *senderuuid = [[NSUUID alloc] initWithUUIDString:[dict objectForKey:@"sender"]];
         
-        mesg = [[PPIdentityMessage alloc] initWithSender:senderuuid senderName:senderName];
+        mesg = [[PPIdentityMessage alloc] initWithSender:senderuuid senderName:senderName timestamp:date uuid:uuid];
     }
     else if([type isEqualToString:@"request"])
     {
         NSUUID *requesteduuid = [[NSUUID alloc] initWithUUIDString:[dict objectForKey:@"requestedPostID"]];
 
-        mesg = [[PPRequestMessage alloc] initWithRequestedPostID:requesteduuid];
+        mesg = [[PPRequestMessage alloc] initWithRequestedPostID:requesteduuid timestamp:date uuid:uuid];
     }
     
-    mesg.uuid = uuid;
-    mesg.timestamp = date;
     return mesg;
 }
 

@@ -10,9 +10,9 @@
 
 @implementation PPMentionMessage
 
--(id)initWithPostIDs:(NSArray *)postuuids
+-(id)initWithPostIDs:(NSArray *)postuuids timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid
 {
-    self = [super initWithType:@"mention" timestamp:[NSDate date]];
+    self = [super initWithType:@"mention" timestamp:messageTimestamp uuid:uuid];
     
     if(!self)
     {

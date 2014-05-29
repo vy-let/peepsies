@@ -10,9 +10,9 @@
 
 @implementation PPIdentityMessage
 
--(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name
+-(id)initWithSender:(NSUUID *)sender senderName:(NSString *)name timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid
 {
-    self = [super initWithType:@"identity" timestamp:[NSDate date]];
+    self = [super initWithType:@"identity" timestamp:messageTimestamp uuid:uuid];
     
     if(!self)
     {

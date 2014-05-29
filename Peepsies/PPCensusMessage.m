@@ -10,9 +10,9 @@
 
 @implementation PPCensusMessage
 
--(id)init
+-(id)initWithTimestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid
 {
-    return [super initWithType:@"census" timestamp:[NSDate date]];
+    return [super initWithType:@"census" timestamp:messageTimestamp uuid:uuid];
     
 }
 

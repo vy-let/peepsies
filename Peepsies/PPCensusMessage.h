@@ -10,4 +10,6 @@
 
 @interface PPCensusMessage : PPMessage
 
+-(id)initWithTimestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
+
 @end

@@ -10,7 +10,7 @@
 
 @interface PPMentionMessage : PPMessage
 
--(id)initWithPostIDs:(NSArray *)postuuids;
+-(id)initWithPostIDs:(NSArray *)postuuids timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
 @property NSArray *postIDs;
 
 @end
