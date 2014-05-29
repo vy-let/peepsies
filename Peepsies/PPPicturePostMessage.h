@@ -10,7 +10,8 @@
 
 @interface PPPicturePostMessage : PPPostMessage
 
-- (id)initWithImage:(UIImage *)image imageData:(NSData *)imageDataOrNil sender:(NSUUID *)sender senderName:(NSString *)name;
+- (id)initWithJPEGData:(NSData *)imageData sender:(NSUUID *)sender senderName:(NSString *)name timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
+- (id)initWithImage:(UIImage *)image sender:(NSUUID *)sender senderName:(NSString *)name timestamp:(NSDate *)messageTimestamp uuid:(NSUUID *)uuid;
 @property (nonatomic, readonly) UIImage *image;
 
 @end

@@ -74,10 +74,11 @@
         
         if([bodytype isEqualToString:@"jpeg"])
         {
-            mesg = [[PPPicturePostMessage alloc] initWithImage:[UIImage imageWithData:messageData]
-                                                                           imageData:messageData
-                                                                              sender:senderuuid
-                                                                          senderName:senderName];
+            mesg = [[PPPicturePostMessage alloc] initWithJPEGData:messageData
+                                                           sender:senderuuid
+                                                       senderName:senderName
+                                                        timestamp:date
+                                                             uuid:uuid];
         }
     }
     else if ([type isEqualToString:@"mention"])
