@@ -88,6 +88,12 @@ static PPPeers *_sharedSingleton = nil;
     return self;
 }
 
+- (void)peep {
+    dispatch_async(_eventQueue, ^{
+        NSLog(@"Peep!");
+    });
+}
+
 
 
 #pragma mark - things we can do for other peeps.
@@ -123,11 +129,11 @@ static PPPeers *_sharedSingleton = nil;
 -(void)advertiser:(MCNearbyServiceAdvertiser *)advertiser didReceiveInvitationFromPeer:(MCPeerID *)peerID withContext:(NSData *)context invitationHandler:(void (^)(BOOL, MCSession *))invitationHandler
 {
     NSLog(@"Received Invitation");
+    MCSession *sessionWithPeer = [[MCSession alloc] initWithPeer:_ourID];
     dispatch_async(_eventQueue, ^{
-        MCSession *sessionWithPeer = [[MCSession alloc] initWithPeer:_ourID];
         [_sessionsWeBelongTo addObject:sessionWithPeer];
-        invitationHandler(YES, sessionWithPeer);
     });
+    invitationHandler(YES, sessionWithPeer);
 }
 
 
@@ -342,6 +348,16 @@ static PPPeers *_sharedSingleton = nil;
         for (MCPeerID *peer in peersWeDontKnow) {
             [_serviceBrowser invitePeer:peer toSession:_ourPublishedSession withContext:nil timeout:30];
         }
+        
+        
+        if ([peersWeDontKnow count] + [peersWeAlreadyKnow count] < 7)
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), _eventQueue, ^{
+                [self fillOurSession];
+            });
+        
+        _isFillingOurSession = NO;
+        [_serviceBrowser stopBrowsingForPeers];
+        _possiblePeersToInvite = nil;
         
     });
     
