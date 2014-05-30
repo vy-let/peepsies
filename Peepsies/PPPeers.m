@@ -78,6 +78,7 @@ static PPPeers *_sharedSingleton = nil;
     _serviceBrowser = [[MCNearbyServiceBrowser alloc] initWithPeer:_ourID serviceType:@"pp-peepsies"];
     [_serviceAdvertiser setDelegate:self];
     [_serviceBrowser setDelegate:self];
+    [_ourPublishedSession setDelegate:self];
     
     [_serviceAdvertiser startAdvertisingPeer];
     
@@ -118,6 +119,8 @@ static PPPeers *_sharedSingleton = nil;
     dispatch_async(_eventQueue, ^{
         [self propagatePost:message asSeenOn:nil];
     });
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PPReceivedNewPost" object:self userInfo:@{@"PPPost": message}];
 }
 
 
@@ -131,6 +134,7 @@ static PPPeers *_sharedSingleton = nil;
     NSLog(@"Received Invitation");
     MCSession *sessionWithPeer = [[MCSession alloc] initWithPeer:_ourID];
     dispatch_async(_eventQueue, ^{
+        [sessionWithPeer setDelegate:self];
         [_sessionsWeBelongTo addObject:sessionWithPeer];
     });
     invitationHandler(YES, sessionWithPeer);
@@ -271,8 +275,8 @@ static PPPeers *_sharedSingleton = nil;
     NSLog(@"Propagate post id %@", messageID);
     
     [_posts setObject:message forKey:messageID];
-    [self postID:messageID wasSeenBySession:session];
     [self mentionPosts:@[messageID]];
+    [self postID:messageID wasSeenBySession:session];
 }
 
 
@@ -332,9 +336,10 @@ static PPPeers *_sharedSingleton = nil;
         [_serviceBrowser stopBrowsingForPeers];  // 3 seconds. Done browsing.
         
         NSSet *localPeers = [NSSet setWithArray:[_ourPublishedSession connectedPeers]];
-        NSSet *peersWeAlreadyKnow = [_sessionsWeBelongTo fromSeed:localPeers reduce:^(NSSet *memo, MCSession *externalSession) {
-            return [memo setByAddingObjectsFromArray:[externalSession connectedPeers]];
-        }];
+        NSSet *peersWeAlreadyKnow = localPeers;
+//        NSSet *peersWeAlreadyKnow = [_sessionsWeBelongTo fromSeed:localPeers reduce:^(NSSet *memo, MCSession *externalSession) {
+//            return [memo setByAddingObjectsFromArray:[externalSession connectedPeers]];
+//        }];
         
         NSArray *peersWeDontKnow = [[_possiblePeersToInvite select:^BOOL(MCPeerID *possiblePeer) {
             return ![peersWeAlreadyKnow containsObject:possiblePeer];
@@ -346,6 +351,7 @@ static PPPeers *_sharedSingleton = nil;
         
         
         for (MCPeerID *peer in peersWeDontKnow) {
+            
             [_serviceBrowser invitePeer:peer toSession:_ourPublishedSession withContext:nil timeout:30];
         }
         
