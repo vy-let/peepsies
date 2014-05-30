@@ -40,7 +40,7 @@
     return [@{
               @"type": self.type,
               @"timestamp": self.timestamp,
-              @"uuid": self.uuid
+              @"uuid": [self.uuid UUIDString]
               
               } mutableCopy];
 }

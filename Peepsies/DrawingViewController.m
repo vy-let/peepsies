@@ -8,6 +8,8 @@
 
 #import "DrawingViewController.h"
 #import "PPDrawView.h"
+#import "PPPeers.h"
+#import "PPPicturePostMessage.h"
 #import "PPDrawingRecordView.h"
 #import "DrawingAttributesViewController.h"
 #import "NSUserDefaults+Colorific.h"
@@ -130,6 +132,7 @@
     [_drawingView clearDrawing];
     [self setUpDrawingView];
     
+    return;
 }
 
 
@@ -140,7 +143,13 @@
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:^{
         
         UIImage *newDrawing = [_drawingRecordView imageWithBackgroundColor:[[self view] backgroundColor]];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"PPShowNewPost" object:self userInfo:@{@"raw image": newDrawing}];
+        NSUUID *myUUID = [[NSUUID alloc] initWithUUIDString:[[NSUserDefaults standardUserDefaults] objectForKey:@"PPUserUUID"]];
+        PPPicturePostMessage *post = [[PPPicturePostMessage alloc] initWithImage:newDrawing
+                                                                          sender:myUUID
+                                                                      senderName:[[NSUserDefaults standardUserDefaults] objectForKey:@"PPUsername"]
+                                                                       timestamp:nil
+                                                                            uuid:nil];
+        [[PPPeers peers] broadcastMessage:post];
         
     }];
 }

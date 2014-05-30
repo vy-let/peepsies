@@ -59,6 +59,8 @@
 - (IBAction)userCommitName:(id)sender {
     [[NSUserDefaults standardUserDefaults] setObject:[nameField text]
                                               forKey:@"PPUsername"];
+    [[NSUserDefaults standardUserDefaults] setObject:[[NSUUID UUID] UUIDString]
+                                              forKey:@"PPUserUUID"];
     [PPPeers initSingleton];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:nil];

@@ -8,6 +8,8 @@
 
 #import "PPMainAppViewController.h" 
 #import "PPPostThumbnail.h"
+#import "PPPostMessage.h"
+#import "PPPicturePostMessage.h"
 #import "PPNewPostCell.h"
 
 @interface PPMainAppViewController ()
@@ -28,6 +30,7 @@
         [[self tabBarItem] setImage:gridImage];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNewPost:) name:@"PPShowNewPost" object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(receiveNewPost:) name:@"PPReceivedNewPost" object:nil];
         
     }
     return self;
@@ -65,20 +68,25 @@
     if(!cell)
         NSLog(@"cell not created");
     
-    [cell setThumbnail:self.photos[indexPath.row - 1]];  // Subtract one from the cell index to get the correct image
+    [cell setThumbnail:[self.photos[indexPath.row - 1] image]];  // Subtract one from the cell index to get the correct image
     
     return cell;
 }
 
 
+
 - (void)receiveNewPost:(NSNotification *)note {
-    UIImage *newPic = [[note userInfo] objectForKey:@"raw image"];
-    [self addPhoto:newPic];
+    PPPostMessage *newPost = [[note userInfo] objectForKey:@"PPPost"];
+    if (![newPost isKindOfClass:[PPPicturePostMessage class]])
+        return;
+    
+    [self addPhoto:newPost];
 }
 
 
-- (void)addPhoto:(UIImage *)photoToDisplay {
-    [_photos insertObject:photoToDisplay atIndex:0];
+
+- (void)addPhoto:(PPPicturePostMessage *)picturePost {
+    [_photos insertObject:picturePost atIndex:0];
     [_thumbnailsView reloadData];
 }
 
@@ -91,20 +99,7 @@
     [self.thumbnailsView registerClass:[PPPostThumbnail class] forCellWithReuseIdentifier:@"rootThum"];
     [self.thumbnailsView registerClass:[PPNewPostCell class] forCellWithReuseIdentifier:@"rootNewPostThum"];
     
-    self.photos = [NSMutableArray arrayWithObjects:
-                      [UIImage imageNamed:@"mario"],
-                      [UIImage imageNamed:@"smile"],
-                      [UIImage imageNamed:@"cupcake"],
-                      [UIImage imageNamed:@"tricolor"],
-                      [UIImage imageNamed:@"sulley"],
-                      [UIImage imageNamed:@"rainbow"],
-                      [UIImage imageNamed:@"spongebob"],
-                      [UIImage imageNamed:@"balloons"],
-                      [UIImage imageNamed:@"penguin"],
-                      [UIImage imageNamed:@"smile"],
-                      [UIImage imageNamed:@"adium"],
-                      [UIImage imageNamed:@"timon"],
-                                                    nil ];
+    self.photos = [@[] mutableCopy];
     
     
     

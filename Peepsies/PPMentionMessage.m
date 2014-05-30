@@ -7,6 +7,7 @@
 //
 
 #import "PPMentionMessage.h"
+#import "NSArray+Iterable.h"
 
 @implementation PPMentionMessage
 
@@ -27,7 +28,10 @@
 -(NSMutableDictionary *)dictionaryDataRepresentation
 {
     NSMutableDictionary *dict = [super dictionaryDataRepresentation];
-    [dict setObject:self.postIDs forKey:@"posts"];  
+    [dict setObject:[self.postIDs map:^(NSUUID *postID) {
+        return [postID UUIDString];
+    }] forKey:@"posts"];
+    
     return dict;
 }
 

@@ -53,4 +53,25 @@
     return memo;
 }
 
+
+
+
+
+- (NSArray *)shuffled {
+    NSMutableArray *intermediate = [self mutableCopy];
+    
+    // From http://stackoverflow.com/questions/56648/whats-the-best-way-to-shuffle-an-nsmutablearray :
+    NSUInteger count = [intermediate count];
+    for (NSUInteger i = 0; i < count; ++i) {
+        // Select a random element between i and end of array to swap with.
+        NSUInteger nElements = count - i;
+        NSInteger n = arc4random_uniform((u_int32_t)nElements) + i;
+        [intermediate exchangeObjectAtIndex:i withObjectAtIndex:n];
+    }
+    
+    return intermediate;
+}
+
+
+
 @end

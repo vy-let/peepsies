@@ -26,13 +26,13 @@
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     if (_touchEndedAction)
-        objc_msgSend(_touchEndedTarget, _touchEndedAction, self);
+        [[UIApplication sharedApplication] sendAction:_touchEndedAction to:_touchEndedTarget from:self forEvent:event];
 }
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [super touchesCancelled:touches withEvent:event];
     if (_touchEndedAction)
-        objc_msgSend(_touchEndedTarget, _touchEndedAction, self);
+        [[UIApplication sharedApplication] sendAction:_touchEndedAction to:_touchEndedTarget from:self forEvent:event];
 }
 
 @end

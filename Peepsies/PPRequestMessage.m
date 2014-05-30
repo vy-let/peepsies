@@ -27,7 +27,7 @@
 -(NSMutableDictionary *)dictionaryDataRepresentation
 {
     NSMutableDictionary *dict = [super dictionaryDataRepresentation];
-    [dict setObject:self.requestedPostID forKey:@"requestedPostID"];
+    [dict setObject:[self.requestedPostID UUIDString] forKey:@"requestedPostID"];
     return dict;
 }
 

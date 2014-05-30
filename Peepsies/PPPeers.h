@@ -9,9 +9,15 @@
 #import <Foundation/Foundation.h>
 #import <MultipeerConnectivity/MultipeerConnectivity.h>
 
+@class PPMessage;
 
-@interface PPPeers : NSObject <MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate>
+
+@interface PPPeers : NSObject <MCNearbyServiceAdvertiserDelegate, MCNearbyServiceBrowserDelegate, MCSessionDelegate>
 
 + (void)initSingleton;
++ (PPPeers *)peers;
+- (void)broadcastMessage:(PPMessage *)message;
+
+- (NSDictionary *)knownPosts;
 
 @end

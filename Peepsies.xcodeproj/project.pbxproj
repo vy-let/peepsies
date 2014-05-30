@@ -55,6 +55,7 @@
 		9C7178D9193054670016BA14 /* ThinSquiggleTemplate@2x.tif in Resources */ = {isa = PBXBuildFile; fileRef = 9C7178D5193054670016BA14 /* ThinSquiggleTemplate@2x.tif */; };
 		9C7178DC1930657A0016BA14 /* NSUserDefaults+Colorific.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178DB1930657A0016BA14 /* NSUserDefaults+Colorific.m */; };
 		9C7178E1193119960016BA14 /* MAKVONotificationCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C7178E0193119960016BA14 /* MAKVONotificationCenter.m */; };
+		9CF3AB2A193850AC009E2983 /* NSSet+Iterable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CF3AB29193850AC009E2983 /* NSSet+Iterable.m */; };
 		C356513F192EF92D00BFC912 /* PPCensusMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C356513E192EF92D00BFC912 /* PPCensusMessage.m */; };
 		C3565142192EF9B000BFC912 /* PPIdentityMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565141192EF9B000BFC912 /* PPIdentityMessage.m */; };
 		C3565145192EFA4A00BFC912 /* PPRequestMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = C3565144192EFA4A00BFC912 /* PPRequestMessage.m */; };
@@ -163,6 +164,8 @@
 		9C7178DB1930657A0016BA14 /* NSUserDefaults+Colorific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSUserDefaults+Colorific.m"; sourceTree = "<group>"; };
 		9C7178DF193119960016BA14 /* MAKVONotificationCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MAKVONotificationCenter.h; sourceTree = "<group>"; };
 		9C7178E0193119960016BA14 /* MAKVONotificationCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MAKVONotificationCenter.m; sourceTree = "<group>"; };
+		9CF3AB28193850AC009E2983 /* NSSet+Iterable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+Iterable.h"; sourceTree = "<group>"; };
+		9CF3AB29193850AC009E2983 /* NSSet+Iterable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+Iterable.m"; sourceTree = "<group>"; };
 		C356513D192EF92D00BFC912 /* PPCensusMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPCensusMessage.h; sourceTree = "<group>"; };
 		C356513E192EF92D00BFC912 /* PPCensusMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPCensusMessage.m; sourceTree = "<group>"; };
 		C3565140192EF9B000BFC912 /* PPIdentityMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPIdentityMessage.h; sourceTree = "<group>"; };
@@ -283,6 +286,8 @@
 				9C0674D0192A78A4003E74FB /* Peepsies-Prefix.pch */,
 				9C4CC4C11936EC9B00D27B7E /* NSArray+Iterable.h */,
 				9C4CC4C21936EC9B00D27B7E /* NSArray+Iterable.m */,
+				9CF3AB28193850AC009E2983 /* NSSet+Iterable.h */,
+				9CF3AB29193850AC009E2983 /* NSSet+Iterable.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -480,6 +485,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Peepsies Ltd.";
 				TargetAttributes = {
+					9C0674BE192A78A4003E74FB = {
+						DevelopmentTeam = RQK45HF983;
+					};
 					9C0674D9192A78A4003E74FB = {
 						TestTargetID = 9C0674BE192A78A4003E74FB;
 					};
@@ -602,6 +610,7 @@
 				9C7178E1193119960016BA14 /* MAKVONotificationCenter.m in Sources */,
 				C3565148192EFA8600BFC912 /* PPMentionMessage.m in Sources */,
 				9C5C7F72192BDD33002B061D /* DLCPBrightnessPicker.m in Sources */,
+				9CF3AB2A193850AC009E2983 /* NSSet+Iterable.m in Sources */,
 				9C5C7F74192BDD33002B061D /* DLCPHuePicker.m in Sources */,
 				9C4CC4B6193408BB00D27B7E /* PPDrawingStroke.m in Sources */,
 				9C5C7F68192BDD33002B061D /* DLCPDoubleAxisSlider.m in Sources */,
@@ -723,6 +732,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taldar Baddley (L537BMMKQ8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taldar Baddley (L537BMMKQ8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Peepsies/Peepsies-Prefix.pch";
 				INFOPLIST_FILE = "Peepsies/Peepsies-Info.plist";
@@ -732,6 +743,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D0107477-B662-4082-93CE-6731F7F4CFC5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -742,6 +754,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Taldar Baddley (L537BMMKQ8)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Taldar Baddley (L537BMMKQ8)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Peepsies/Peepsies-Prefix.pch";
 				INFOPLIST_FILE = "Peepsies/Peepsies-Info.plist";
@@ -751,6 +765,7 @@
 					"$(PROJECT_DIR)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "D0107477-B662-4082-93CE-6731F7F4CFC5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
