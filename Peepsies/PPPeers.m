@@ -133,8 +133,8 @@ static PPPeers *_sharedSingleton = nil;
 {
     NSLog(@"Received Invitation");
     MCSession *sessionWithPeer = [[MCSession alloc] initWithPeer:_ourID];
+    [sessionWithPeer setDelegate:self];
     dispatch_async(_eventQueue, ^{
-        [sessionWithPeer setDelegate:self];
         [_sessionsWeBelongTo addObject:sessionWithPeer];
     });
     invitationHandler(YES, sessionWithPeer);
@@ -246,7 +246,7 @@ static PPPeers *_sharedSingleton = nil;
 - (void)session:(MCSession *)session didFinishReceivingResourceWithName:(NSString *)resourceName fromPeer:(MCPeerID *)peerID atURL:(NSURL *)localURL withError:(NSError *)error { }
 - (void)session:(MCSession *)session didReceiveStream:(NSInputStream *)stream withName:(NSString *)streamName fromPeer:(MCPeerID *)peerID { }
 - (void)session:(MCSession *)session didReceiveCertificate:(NSArray *)certificate fromPeer:(MCPeerID *)peerID certificateHandler:(void (^)(BOOL))certificateHandler {
-    certificateHandler(NO);
+    certificateHandler(YES);
 }
 
 
